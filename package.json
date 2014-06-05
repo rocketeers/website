@@ -24,7 +24,6 @@
 		"grunt-prettify": "*",
 		"grunt-shell": "*",
 		"grunt-svgmin": "*",
-		"grunt-text-replace": "*",
 		"grunt-tinypng": "*",
     "jit-grunt": "*"
 	}
