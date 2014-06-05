@@ -7,6 +7,7 @@
 		"glob": "*"
 	},
 	"devDependencies": {
+		"grunt-autoprefixer": "*",
 		"grunt-bower-task": "*",
 		"grunt-contrib-clean": "*",
 		"grunt-contrib-compass": "*",
@@ -17,14 +18,14 @@
 		"grunt-contrib-jshint": "*",
 		"grunt-contrib-uglify": "*",
 		"grunt-contrib-watch": "*",
-		"grunt-markdown": "*",
 		"grunt-csscss": "*",
+		"grunt-markdown": "*",
+		"grunt-notify": "*",
 		"grunt-prettify": "*",
 		"grunt-shell": "*",
 		"grunt-svgmin": "*",
-		"grunt-tinypng": "*",
-		"load-grunt-tasks": "*",
 		"grunt-text-replace": "*",
-		"grunt-autoprefixer": "*"
+		"grunt-tinypng": "*",
+    "jit-grunt": "*"
 	}
 }

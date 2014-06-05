@@ -21,7 +21,7 @@ module.exports = {
 		files: {
 			'<%= paths.compiled.css %>/styles.css': [
 				'<%= paths.components.bootstrap.css %>',
-				'<%= components %>/rainbow/themes/tomorrow-night.css',
+				'<%= components %>/prism/themes/prism-okaidia.css',
 				'<%= paths.original.css %>/*'
 			],
 		},
@@ -30,10 +30,10 @@ module.exports = {
 		files: {
 			'<%= paths.compiled.js %>/scripts.js': [
 				'<%= paths.components.jquery %>',
-				'<%= components %>/rainbow/js/rainbow.js',
-				'<%= components %>/rainbow/js/language/generic.js',
-				'<%= components %>/rainbow/js/language/php.js',
-				'<%= components %>/toc/dist/jquery.toc.js',
+				'<%= components %>/prism/prism.js',
+				'<%= components %>/prism/components/prism-php.js',
+				'<%= components %>/smooth-scroller/dist/smooth-scroller.bower.js',
+				'<%= components %>/toc/dist/toc.bower.js',
 
 				'<%= paths.original.js %>/**/*.js',
 			],

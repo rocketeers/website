@@ -103,7 +103,7 @@ p, ul {
       padding: 0.5rem 2rem 0.75rem; }
     .layout-content section:nth-child(2n) {
       background-color: #2b3d4f; }
-      .layout-content section:nth-child(2n), .layout-content section:nth-child(2n) h1:first-child, .layout-content section:nth-child(2n) a {
+      .layout-content section:nth-child(2n), .layout-content section:nth-child(2n) h1:first-of-type, .layout-content section:nth-child(2n) a {
         color: #e6e6e6; }
       .layout-content section:nth-child(2n) h2, .layout-content section:nth-child(2n) h3 {
         color: #56a9e1; }
