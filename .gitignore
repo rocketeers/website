@@ -1,3 +1,6 @@
+# Development
+.idea
+
 # Cache and compiled
 .sass-cache
 public/builds
