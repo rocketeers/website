@@ -3,13 +3,15 @@
 
 # Cache and compiled
 *.map
+.rocketeer/logs
 .sass-cache
-public/builds
+api
 contents.md
 index.html
-.rocketeer/logs
+public/builds
 
 # Dependencies
+phpdoc.phar
 public/components
 node_modules
 vendor

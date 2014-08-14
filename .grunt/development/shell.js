@@ -13,5 +13,11 @@ module.exports = {
 			'php bin/compile',
 			'mv bin/rocketeer.phar ../versions/rocketeer.phar',
 		].join('&&'),
+	},
+
+	api: {
+		command: [
+			'php phpdoc.phar -t api -d rocketeer/src --template="responsive"',
+		].join('&&'),
 	}
 };
