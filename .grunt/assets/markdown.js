@@ -1,17 +1,24 @@
 module.exports = {
-	dist: {
-		files: {
-			'index.html': ['contents.md'],
-		},
-		options: {
-			template: 'index.template.html',
-			postCompile: function(src, context) {
-				src = src
-					.replace(/\[section\](<\/p>)?/g, '<section>')
-					.replace(/(<p>)?\[\/section\]/g, '</section>');
+	options: {
+		template: '.grunt/markdown.html',
 
-				return '<section>'+src+'</section>';
+	},
+
+	dist: {
+		files: [
+			{
+				expand: true,
+				src   : 'wiki/**/*.md',
+				dest  : '<%= paths.original.templates %>',
+				ext   : '.html',
 			},
-		},
+			{
+				flatten: true,
+				expand: true,
+				src   : 'vendor/anahkiasen/rocketeer/**/*.md',
+				dest  : '<%= paths.original.templates %>',
+				ext   : '.html',
+			}
+		],
 	}
 };

@@ -6,8 +6,8 @@
 .rocketeer/logs
 .sass-cache
 api
-contents.md
 index.html
+public/app/templates
 public/builds
 
 # Dependencies

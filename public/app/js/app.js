@@ -1,0 +1,6 @@
+var app = angular.module('rocketeer', []);
+
+// Controllers
+//////////////////////////////////////////////////////////////////////
+
+app.controller('AppController', AppController);

@@ -20,6 +20,7 @@
 	////////////////////////////////////////////////////////////////////
 
 	a {
+		cursor: pointer;
 		color: white;
 		font-weight: 400;
 
@@ -40,6 +41,7 @@
 		margin: 0;
 		padding: 0.15rem 0.5rem;
 
+		&.active,
 		&:hover {
 			background-color: darken(color('cello'), 15);
 		}
@@ -48,25 +50,7 @@
 	// Titles
 	////////////////////////////////////////////////////////////////////
 
-	$spacing: 0.6rem;
-
-	.toc-h1 {
-		border-left: 3px solid color('oslo');
-	}
-
-	.toc-h2 {
-		padding-left: $spacing * 2;
-		font-size: 1rem;
-	}
-
-	.toc-h3 {
-		padding-left: $spacing * 3;
-		font-size: 0.9rem;
-	}
-
-	.toc-h3,
-	.toc-h4 {
-		padding-left: $spacing * 4;
-		font-size: 0.8rem;
+	h2 {
+		color: white;
 	}
 }

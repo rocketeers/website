@@ -51,8 +51,7 @@ module.exports = function(grunt) {
 	////////////////////////////////////////////////////////////////////
 
 	grunt.registerTask('md', 'Build contents', [
-		'newer:concat:md',
-		'markdown',
+		'newer:markdown',
 		'newer:prettify',
 	]);
 

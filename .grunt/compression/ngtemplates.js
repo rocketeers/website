@@ -10,12 +10,9 @@ module.exports = {
 			removeScriptTypeAttributes:     true,
 			removeStyleLinkTypeAttributes:  true
 		},
-		url: function(url) {
-			return url.replace('public/', '/');
-		}
 	},
 
-	weholi: {
+	rocketeer: {
 		src  : '<%= paths.original.templates %>/**/*.html',
 		dest : '<%= paths.compiled.js %>/templates.js',
 	},
