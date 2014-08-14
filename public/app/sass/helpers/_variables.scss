@@ -5,20 +5,20 @@
 // Fonts
 //////////////////////////////////////////////////////////////////////
 
-$font-sans   : "Lato", Helvetica, Arial, sans-serif;
+$font-sans   : 'Lato', Helvetica, Arial, sans-serif;
 $line-height : 1.25;
 
 // Colors
 //////////////////////////////////////////////////////////////////////
 
 $swatch: (
-	"cello"    : hsl(210, 29%, 29%),
-	"solitude" : hsl(192, 15%, 94%),
-	"oslo"     : hsl(184, 6%,  53%),
-	"navy"     : hsl(204, 70%, 46%),
+	'cello'    : hsl(210, 29%, 29%),
+	'solitude' : hsl(192, 15%, 94%),
+	'oslo'     : hsl(184, 6%,  53%),
+	'navy'     : hsl(204, 70%, 46%),
 );
 
-$color-base    : color("cello");
+$color-base    : color('cello');
 $color-accent  : darken($color-base, 10);
 
 // Breakpoints
@@ -40,6 +40,6 @@ $sidebar-width : 2;
 //////////////////////////////////////////////////////////////////////
 
 $susy: (
-	"columns" : 12,
-	"gutters": 0,
+	'columns' : 12,
+	'gutters': 0,
 );

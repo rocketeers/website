@@ -21,9 +21,9 @@ $inner-padding: 2rem;
 		padding: 2rem 10%;
 
 		h1:first-of-type {
-			width: 100%;
 			@extend %reset-margins;
-			@include box-sizing(content-box);
+			width: 100%;
+			box-sizing: border-box;
 			color: $color-accent;
 			text-transform: uppercase;
 			text-align: center;
@@ -38,13 +38,20 @@ $inner-padding: 2rem;
 			$color: darken($color-base, 5);
 			background-color: $color;
 
-			&, h1:first-of-type, a {
+			&,
+			h1:first-of-type,
+			a {
 				color: lighten(black, 90);
 			}
-			h2, h3 {
-				color: lighten(color("navy"), 15);
+
+			h2,
+			h3 {
+				color: lighten(color('navy'), 15);
 			}
-			&, p, li {
+
+			&,
+			p,
+			li {
 				& > code {
 					background-color: darken($color, 15);
 					color: white;

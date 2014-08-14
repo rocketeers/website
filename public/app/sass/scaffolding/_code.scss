@@ -4,11 +4,12 @@
 //////////////////////////////////////////////////////////////////////
 
 pre {
-	padding: .75rem;
+	padding: 0.75rem;
 	border: none;
 
 	@include breakpoint(max-width $tablet) {
 		line-height: 1.2;
+
 		code {
 			font-size: 0.75rem;
 		}

@@ -8,13 +8,14 @@
 	@include establish-baseline(14px);
 }
 
-body, html {
+body,
+html {
 	@extend %reset-margins;
 	font-family: $font-sans;
 	line-height: $line-height;
 }
 
 body {
-	background-color: color("solitude");
-	color: color("oslo");
+	background-color: color('solitude');
+	color: color('oslo');
 }

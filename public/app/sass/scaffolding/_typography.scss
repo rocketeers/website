@@ -6,7 +6,10 @@
 // Titles
 //////////////////////////////////////////////////////////////////////
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
 	font-family: $font-sans;
 	line-height: $line-height;
 	font-weight: 300;
@@ -31,7 +34,7 @@ h4 {
 }
 
 hr {
-	border-color: color("oslo");
+	border-color: color('oslo');
 }
 
 // Text
@@ -50,7 +53,8 @@ ul {
 	list-style-type: square;
 }
 
-p, ul {
+p,
+ul {
 	font-size: 1.1rem;
 	line-height: 1.4;
 	margin: 1rem 0;
