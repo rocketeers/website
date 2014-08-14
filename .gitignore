@@ -11,7 +11,6 @@ index.html
 public/builds
 
 # Dependencies
-phpdoc.phar
 public/components
 node_modules
 vendor
