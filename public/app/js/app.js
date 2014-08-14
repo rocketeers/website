@@ -1,4 +1,6 @@
-var app = angular.module('rocketeer', []);
+var app = angular.module('rocketeer', [
+	'duScroll'
+]);
 
 // Controllers
 //////////////////////////////////////////////////////////////////////

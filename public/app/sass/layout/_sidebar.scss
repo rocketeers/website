@@ -43,7 +43,19 @@
 
 		&.active,
 		&:hover {
-			background-color: darken(color('cello'), 15);
+			$active: darken(color('cello'), 10);
+			background-color: $active;
+
+			ul {
+				margin: 0.5em 0.25em;
+
+				li {
+					border-left: 3px solid white;
+					&:hover {
+						border-left: 3px solid darken($color-base, 5);
+					}
+				}
+			}
 		}
 	}
 
@@ -52,5 +64,27 @@
 
 	h2 {
 		color: white;
+	}
+
+	$spacing: 0.6rem;
+
+	.link-h1 {
+		display: none;
+	}
+
+	.link-h2 {
+		padding-left: $spacing * 2;
+		font-size: 1rem;
+	}
+
+	.link-h3 {
+		padding-left: $spacing * 3;
+		font-size: 0.9rem;
+	}
+
+	.link-h3,
+	.link-h4 {
+		padding-left: $spacing * 4;
+		font-size: 0.8rem;
 	}
 }

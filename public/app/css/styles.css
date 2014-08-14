@@ -202,8 +202,26 @@ ul {
     margin: 0;
     padding: 0.15rem 0.5rem; }
     .layout-sidebar li.active, .layout-sidebar li:hover {
-      background-color: #19242e; }
+      background-color: #22303f; }
+      .layout-sidebar li.active ul, .layout-sidebar li:hover ul {
+        margin: 0.5em 0.25em; }
+        .layout-sidebar li.active ul li, .layout-sidebar li:hover ul li {
+          border-left: 3px solid white; }
+          .layout-sidebar li.active ul li:hover, .layout-sidebar li:hover ul li:hover {
+            border-left: 3px solid #2b3d4f; }
   .layout-sidebar h2 {
     color: white; }
+  .layout-sidebar .link-h1 {
+    display: none; }
+  .layout-sidebar .link-h2 {
+    padding-left: 1.2rem;
+    font-size: 1rem; }
+  .layout-sidebar .link-h3 {
+    padding-left: 1.8rem;
+    font-size: 0.9rem; }
+  .layout-sidebar .link-h3,
+  .layout-sidebar .link-h4 {
+    padding-left: 2.4rem;
+    font-size: 0.8rem; }
 
 /*# sourceMappingURL=styles.css.map */

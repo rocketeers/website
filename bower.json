@@ -5,7 +5,9 @@
     "jquery": "~2.1.1",
     "prism": "#gh-pages",
     "toc": "~0.3.2",
-    "angular": "~1.2.22"
+    "angular": "~1.2.22",
+    "angular-smoothscroll": "~1.1.1",
+    "angular-scroll": "~0.6.1"
   },
   "resolutions": {
     "jquery": "~2.1.1"

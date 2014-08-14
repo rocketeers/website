@@ -1,4 +1,5 @@
-var AppController = function ($scope) {
+var AppController = function ($scope, $location) {
+
 	$scope.page = 'README';
 	$scope.categories = [
 		{
@@ -26,12 +27,27 @@ var AppController = function ($scope) {
 			}
 		}
 	];
+	$scope.subcategories = [];
 
-	$scope.unsorted = function(object) {
+	$scope.unsorted = function (object) {
 		return Object.keys(object);
 	}
 
-	$scope.highlight = function() {
+	$scope.highlight = function () {
+		// Bind categories to sidebar
+		$scope.subcategories = [];
+		$('main section').find('h1, h2, h3, h4').each(function (key, header) {
+			$scope.subcategories.push({
+				label : header.innerHTML,
+				anchor: header.id,
+				size  : header.tagName.toLowerCase(),
+			});
+		});
+
+		// Highlight content
 		Prism.highlightAll();
+
+		// Update URL
+		$location.path($scope.page);
 	};
 };
