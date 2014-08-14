@@ -1,4 +1,11 @@
-module.exports = [
-	'<%= builds %>',
-	'<%= paths.original.fonts %>',
-];
+module.exports = {
+	front: [
+		'node_modules/grunt-newer/.cache',
+		'<%= builds %>',
+	],
+	local: [
+		'<%= paths.original.fonts %>',
+		'<%= paths.original.css %>',
+	],
+};
+

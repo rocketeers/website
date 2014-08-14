@@ -15,6 +15,12 @@ module.exports = {
 			'gradients'                  : false,
 			'box-sizing'                 : false,
 			'compatible-vendor-prefixes' : false,
+
+			'ids'                        : false,
+			'underscore-property-hack'   : false,
+			'overqualified-elements'     : false,
+			'universal-selector'         : false,
+			'fallback-colors'            : false,
 		},
 		src: ['<%= paths.original.css %>/*']
 	},

@@ -10,7 +10,11 @@
 
 	<!-- Stylesheets -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="public/builds/css/styles.min.css">
+	<!-- build:css public/builds/css/styles.css -->
+	<link rel="stylesheet" href="public/components/boostrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="public/components/prism/themes/prism-okaidia.css">
+	<link rel="stylesheet" href="public/app/css/styles.css">
+	<!-- endbuild -->
 
 	<!-- Responsive tags -->
 	<meta name='apple-mobile-web-app-capable' content='yes' />
@@ -45,6 +49,14 @@
 		&copy; 2014 - Maxime Fabre
 	</footer>
 
-  <script src='public/builds/js/scripts.min.js'></script>
+	<!-- build:js public/builds/js/scripts.js -->
+	<script src="public/components/jquery/dist/jquery.js"></script>
+	<script src="public/components/prism/prism.js"></script>
+	<script src="public/components/prism/components/prism-php.js"></script>
+	<script src="public/components/smooth-scroller/dist/smooth-scroller.bower.js"></script>
+	<script src="public/components/toc/dist/toc.bower.js"></script>
+	<script src="public/app/js/components/toc.js"></script>
+	<script src="public/app/js/index.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

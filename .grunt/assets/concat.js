@@ -17,26 +17,4 @@ module.exports = {
 			separator: "\n\n[/section]\n[section]\n\n"
 		},
 	},
-	css: {
-		files: {
-			'<%= paths.compiled.css %>/styles.css': [
-				'<%= paths.components.bootstrap.css %>',
-				'<%= components %>/prism/themes/prism-okaidia.css',
-				'<%= paths.original.css %>/*'
-			],
-		},
-	},
-	js: {
-		files: {
-			'<%= paths.compiled.js %>/scripts.js': [
-				'<%= paths.components.jquery %>',
-				'<%= components %>/prism/prism.js',
-				'<%= components %>/prism/components/prism-php.js',
-				'<%= components %>/smooth-scroller/dist/smooth-scroller.bower.js',
-				'<%= components %>/toc/dist/toc.bower.js',
-
-				'<%= paths.original.js %>/**/*.js',
-			],
-		},
-	}
 };

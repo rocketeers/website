@@ -11,53 +11,57 @@ module.exports = function(grunt) {
 		'copy',
 	]);
 
-	grunt.registerTask('rebuild', 'Build assets from scratch', [
-		'compass',
+	grunt.registerTask('rebuild', 'Rebuild all assets from scratch', [
 		'clean',
+		'compass:clean',
 		'default',
 	]);
 
 	grunt.registerTask('production', 'Build assets for production', [
+		'useminPrepare',
 		'clean',
 		'md',
 		'copy',
-		'concat', 'minify',
-		'shell:phar'
+		'concat',
+		'minify',
+		'usemin',
+		'shell:phar',
 	]);
 
 	// Flow
 	////////////////////////////////////////////////////////////////////
 
 	grunt.registerTask('minify', 'Minify assets', [
-		'cssmin',
-		'uglify',
+		'newer:cssmin',
+		'newer:uglify',
 	]);
 
 	grunt.registerTask('images', 'Recompress images', [
-		'svgmin',
-		'tinypng',
+		'newer:svgmin',
+		'newer:tinypng',
+	]);
+
+	grunt.registerTask('lint', 'Lint the files', [
+		'scsslint',
+		'csslint',
+		'csscss',
 	]);
 
 	// By filetype
 	////////////////////////////////////////////////////////////////////
 
 	grunt.registerTask('md', 'Build contents', [
-		'concat:md',
+		'newer:concat:md',
 		'markdown',
-		'prettify',
+		'newer:prettify',
 	]);
 
 	grunt.registerTask('js', 'Build scripts', [
-		'jshint',
-		'concat:js',
 	]);
 
 	grunt.registerTask('css', 'Build stylesheets', [
-		'compass:compile',
-		'csslint',
-		'csscss',
-		'autoprefixer',
-		'concat:css',
+		'newer:compass:compile',
+		'newer:autoprefixer',
 	]);
 
 }
