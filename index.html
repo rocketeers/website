@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rocketeer</title>
+
+	<!-- Chrome Frame and Favicon -->
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<link href='assets/img/favicon.png' rel='shortcut icon' />
+
+	<!-- Stylesheets -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<!-- build:css builds/css/styles.css -->
+	<link rel="stylesheet" href="public/components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="public/components/prism/themes/prism-okaidia.css">
+	<link rel="stylesheet" href="public/app/css/styles.css">
+	<!-- endbuild -->
+
+	<!-- Responsive tags -->
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='apple-touch-fullscreen' content='yes' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+</head>
+
+<body ng-app="rocketeer">
+	<header class="layout-header">
+		<h1>
+			Rocketeer
+			<small>A fast deployer for the PHP world</small>
+		</h1>
+	</header>
+
+	<section class="layout-buttons">
+		<iframe src="http://ghbtns.com/github-btn.html?user=Anahkiasen&repo=rocketeer&type=watch&size=large&count=true"
+	  allowtransparency="true" frameborder="0" scrolling="0" width="162" height="30"></iframe>
+		<iframe src="http://ghbtns.com/github-btn.html?user=Anahkiasen&repo=rocketeer&type=fork&size=large&count=true"
+	  allowtransparency="true" frameborder="0" scrolling="0" width="162" height="30"></iframe>
+		<iframe src="http://ghbtns.com/github-btn.html?user=Anahkiasen&repo=rocketeer&type=follow&size=large&count=true"
+	  allowtransparency="true" frameborder="0" scrolling="0" width="252" height="30"></iframe>
+	</section>
+
+	<div class="layout-container" ng-controller="AppController">
+		<aside class="layout-sidebar">
+			<nav ng-repeat="category in categories">
+				<h2>{{ category.label }}</h2>
+				<ul>
+					<li ng-repeat="label in unsorted(category.pages)" ng-init="link = category.pages[label]" ng-class="{active: $parent.page == link}">
+						<a ng-click="$parent.$parent.page = link">{{ label }}</a>
+
+						<ul ng-if="$parent.page == link">
+							<li class="link-{{ subcategory.size }}" ng-repeat="subcategory in subcategories">
+								<a href="#{{ subcategory.anchor }}" du-smooth-scroll>{{ subcategory.label }}</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<main class="layout-content">
+			<section ng-include="'public/app/templates/' +page+ '.html'" onload="highlight()"></section>
+		</main>
+	</div>
+
+	<footer class="layout-footer" id="footer">
+		<a href="https://github.com/Anahkiasen/rocketeer/tree/gh-pages">See the sources for this website</a><br>
+		&copy; 2014 - Maxime Fabre
+	</footer>
+
+	<!-- build:js builds/js/scripts.js -->
+	<script src="public/components/jquery/dist/jquery.js"></script>
+	<script src="public/components/prism/prism.js"></script>
+	<script src="public/components/prism/components/prism-php.js"></script>
+	<script src="public/components/angular/angular.js"></script>
+	<script src="public/components/angular-scroll/angular-scroll.js"></script>
+	<script src="public/app/js/Controllers/AppController.js"></script>
+	<script src="public/app/js/app.js"></script>
+	<!-- endbuild -->
+</body>
+</html>

@@ -9,6 +9,7 @@ module.exports = {
 	phar: {
 		command: [
 			'cd vendor/anahkiasen/rocketeer',
+			'composer install',
 			'php bin/compile',
 			'mv bin/rocketeer.phar ../../../output/rocketeer.phar',
 		].join('&&'),
@@ -20,3 +21,4 @@ module.exports = {
 		].join('&&'),
 	}
 };
+

@@ -18,14 +18,14 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('production', 'Build assets for production', [
-		'useminPrepare',
 		'clean',
-		'md',
-		'copy',
+		'default',
+		'ngAnnotate',
+		'useminPrepare',
 		'concat',
 		'minify',
 		'usemin',
-		'shell:phar',
+		//'shell:phar',
 	]);
 
 	// Flow

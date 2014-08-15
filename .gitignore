@@ -5,8 +5,9 @@
 *.map
 .rocketeer/logs
 .sass-cache
+.tmp
 api
-index.html
+public/app/css
 public/app/templates
 public/builds
 

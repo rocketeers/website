@@ -2,10 +2,10 @@ module.exports = {
 	options: {
 		blockReplacements: {
 			css: function (block) {
-				return '{{ HTML.style("' + block.dest + '")|raw }}';
+				return '<link rel="stylesheet" href="public/' +block.dest+ '">';
 			},
 			js: function (block) {
-				return '{{ HTML.script("' + block.dest + '")|raw }}';
+				return '<script src="public/' +block.dest+ '"></script>';
 			},
 		},
 	},
