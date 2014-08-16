@@ -42,6 +42,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('lint', 'Lint the files', [
+		'tslint',
 		'scsslint',
 		'csslint',
 		'csscss',
@@ -56,6 +57,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('js', 'Build scripts', [
+		'typescript',
 	]);
 
 	grunt.registerTask('css', 'Build stylesheets', [

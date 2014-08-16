@@ -6,8 +6,5 @@
     "prism": "#gh-pages",
     "angular": "~1.2.22",
     "angular-scroll": "~0.6.1"
-  },
-  "resolutions": {
-    "jquery": "~2.1.1"
   }
 }

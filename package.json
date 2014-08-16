@@ -10,6 +10,8 @@
 		"grunt-markdown": "*",
 		"grunt-prettify": "*",
 		"grunt-tinypng": "*",
+		"grunt-tslint": "*",
+		"grunt-typescript": "*",
     "grunt-angular-templates": "*",
     "grunt-autoprefixer": "*",
     "grunt-bower-task": "*",
@@ -30,6 +32,7 @@
     "grunt-svgmin": "*",
     "grunt-usemin": "*",
     "grunt-webfont": "*",
-    "jit-grunt": "*"
+    "jit-grunt": "*",
+		"tsd": "*"
 	}
 }

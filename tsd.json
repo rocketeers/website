@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "public/app/ts/_definitions",
+  "bundle": "public/app/ts/tsd.ts",
+  "installed": {
+    "jquery/jquery.d.ts": {
+      "commit": "fbee02cb171c2676ea8a391f7ad874a63d0216b0"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "2bd16634a11171003c42d78f0d86ce8fecf822a6"
+    }
+  }
+}

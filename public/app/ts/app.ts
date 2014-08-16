@@ -5,4 +5,4 @@ var app = angular.module('rocketeer', [
 // Controllers
 //////////////////////////////////////////////////////////////////////
 
-app.controller('AppController', AppController);
+app.controller('AppController', Rocketeer.AppController);

@@ -10,11 +10,7 @@
 
 	<!-- Stylesheets -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<!-- build:css builds/css/styles.css -->
-	<link rel="stylesheet" href="public/components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="public/components/prism/themes/prism-okaidia.css">
-	<link rel="stylesheet" href="public/app/css/styles.css">
-	<!-- endbuild -->
+	<link rel="stylesheet" href="builds/css/styles.css">
 
 	<!-- Responsive tags -->
 	<meta name='apple-mobile-web-app-capable' content='yes' />
@@ -39,12 +35,12 @@
 	  allowtransparency="true" frameborder="0" scrolling="0" width="252" height="30"></iframe>
 	</section>
 
-	<div class="layout-container" ng-controller="AppController">
+	<div class="layout-container" ng-controller="Rocketeer.AppController">
 		<aside class="layout-sidebar">
 			<nav ng-repeat="category in categories">
 				<h2>{{ category.label }}</h2>
 				<ul>
-					<li ng-repeat="label in unsorted(category.pages)" ng-init="link = category.pages[label]" ng-class="{active: $parent.page == link}">
+					<li ng-repeat="label in controller.unsorted(category.pages)" ng-init="link = category.pages[label]" ng-class="{active: $parent.page == link}">
 						<a ng-click="$parent.$parent.page = link">{{ label }}</a>
 
 						<ul ng-if="$parent.page == link">
@@ -57,7 +53,7 @@
 			</nav>
 		</aside>
 		<main class="layout-content">
-			<section ng-include="'public/app/templates/' +page+ '.html'" onload="highlight()"></section>
+			<section ng-include="'app/templates/' +page+ '.html'" onload="controller.highlight()"></section>
 		</main>
 	</div>
 
@@ -66,14 +62,6 @@
 		&copy; 2014 - Maxime Fabre
 	</footer>
 
-	<!-- build:js builds/js/scripts.js -->
-	<script src="public/components/jquery/dist/jquery.js"></script>
-	<script src="public/components/prism/prism.js"></script>
-	<script src="public/components/prism/components/prism-php.js"></script>
-	<script src="public/components/angular/angular.js"></script>
-	<script src="public/components/angular-scroll/angular-scroll.js"></script>
-	<script src="public/app/js/Controllers/AppController.js"></script>
-	<script src="public/app/js/app.js"></script>
-	<!-- endbuild -->
+	<script src="builds/js/scripts.js"></script>
 </body>
 </html>
