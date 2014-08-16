@@ -10,6 +10,9 @@ module.exports = {
 			removeScriptTypeAttributes:     true,
 			removeStyleLinkTypeAttributes:  true
 		},
+		url    : function (url) {
+			return url.replace('public/', '');
+		}
 	},
 
 	rocketeer: {

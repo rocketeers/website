@@ -58,7 +58,7 @@
 				</li>
 			</ul>
 
-			<section ng-include="'app/templates/' +$location.path()+ '.html'" onload="controller.highlight()"></section>
+			<section ng-include="'app/templates' +$location.path()+ '.html'" onload="controller.highlight()"></section>
 		</main>
 
 	</div>
@@ -81,6 +81,7 @@
 	<script src="components/angular-strap/dist/angular-strap.tpl.js"></script>
 	<script src="app/js/Controllers/AppController.js"></script>
 	<script src="app/js/app.js"></script>
+	<script src="builds/js/templates.js"></script>
 	<!-- endbuild -->
 
 	<script type="text/javascript" src="//use.typekit.net/bhc8bkn.js"></script>
