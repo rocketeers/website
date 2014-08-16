@@ -1,3 +1,10 @@
+declare var Prism: {
+	highlightAll();
+};
+
+// Application
+//////////////////////////////////////////////////////////////////////
+
 var app = angular.module('rocketeer', [
 	'duScroll'
 ]);
