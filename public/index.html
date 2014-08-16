@@ -45,7 +45,7 @@
 				<h2>{{ category.label }}</h2>
 				<ul>
 					<li ng-repeat="label in controller.unsorted(category.pages)" ng-init="link = category.pages[label]" ng-class="{active: $parent.$location.path() == '/'+link}">
-						<a ng-click="$parent.$parent.$location.path(link)">{{ label }}</a>
+						<a du-smooth-scroll href="#top" ng-click="$parent.$parent.$location.path(link)">{{ label }}</a>
 					</li>
 				</ul>
 			</nav>
