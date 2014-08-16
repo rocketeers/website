@@ -10,7 +10,12 @@
 
 	<!-- Stylesheets -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="builds/css/styles.css">
+	<!-- build:css builds/css/styles.css -->
+	<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="components/prism/themes/prism-okaidia.css">
+	<link rel="stylesheet" href="app/css/styles.css">
+	<!-- endbuild -->
+
 
 	<!-- Responsive tags -->
 	<meta name='apple-mobile-web-app-capable' content='yes' />
@@ -28,11 +33,11 @@
 
 	<section class="layout-buttons">
 		<iframe src="http://ghbtns.com/github-btn.html?user=Anahkiasen&repo=rocketeer&type=watch&size=large&count=true"
-	  allowtransparency="true" frameborder="0" scrolling="0" width="162" height="30"></iframe>
+		        allowtransparency="true" frameborder="0" scrolling="0" width="162" height="30"></iframe>
 		<iframe src="http://ghbtns.com/github-btn.html?user=Anahkiasen&repo=rocketeer&type=fork&size=large&count=true"
-	  allowtransparency="true" frameborder="0" scrolling="0" width="162" height="30"></iframe>
+		        allowtransparency="true" frameborder="0" scrolling="0" width="162" height="30"></iframe>
 		<iframe src="http://ghbtns.com/github-btn.html?user=Anahkiasen&repo=rocketeer&type=follow&size=large&count=true"
-	  allowtransparency="true" frameborder="0" scrolling="0" width="252" height="30"></iframe>
+		        allowtransparency="true" frameborder="0" scrolling="0" width="252" height="30"></iframe>
 	</section>
 
 	<div class="layout-container" ng-controller="Rocketeer.AppController">
@@ -40,10 +45,10 @@
 			<nav ng-repeat="category in categories">
 				<h2>{{ category.label }}</h2>
 				<ul>
-					<li ng-repeat="label in controller.unsorted(category.pages)" ng-init="link = category.pages[label]" ng-class="{active: $parent.page == link}">
-						<a ng-click="$parent.$parent.page = link">{{ label }}</a>
+					<li ng-repeat="label in controller.unsorted(category.pages)" ng-init="link = category.pages[label]" ng-class="{active: $parent.$location.path() == '/'+link}">
+						<a ng-click="$parent.$parent.$location.path(link)">{{ label }}</a>
 
-						<ul ng-if="$parent.page == link">
+						<ul ng-if="$parent.$location.path() == '/'+link">
 							<li class="link-{{ subcategory.size }}" ng-repeat="subcategory in subcategories">
 								<a href="#{{ subcategory.anchor }}" du-smooth-scroll>{{ subcategory.label }}</a>
 							</li>
@@ -53,7 +58,7 @@
 			</nav>
 		</aside>
 		<main class="layout-content">
-			<section ng-include="'app/templates/' +page+ '.html'" onload="controller.highlight()"></section>
+			<section ng-include="'app/templates/' +$location.path()+ '.html'" onload="controller.highlight()"></section>
 		</main>
 	</div>
 
@@ -62,6 +67,14 @@
 		&copy; 2014 - Maxime Fabre
 	</footer>
 
-	<script src="builds/js/scripts.js"></script>
+	<!-- build:js builds/js/scripts.js -->
+	<script src="components/jquery/dist/jquery.js"></script>
+	<script src="components/prism/prism.js"></script>
+	<script src="components/prism/components/prism-php.js"></script>
+	<script src="components/angular/angular.js"></script>
+	<script src="components/angular-scroll/angular-scroll.js"></script>
+	<script src="app/js/Controllers/AppController.js"></script>
+	<script src="app/js/app.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

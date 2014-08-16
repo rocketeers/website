@@ -17,7 +17,7 @@ module.exports = {
 		tasks: 'copy',
 	},
 	js: {
-		files: '<%= paths.original.js %>/**/*',
+		files: '<%= paths.original.ts %>/**/*',
 		tasks: 'js',
 	},
 	css: {

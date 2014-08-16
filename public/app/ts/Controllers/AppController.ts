@@ -55,8 +55,12 @@ module Rocketeer {
 		 */
 		constructor(public $scope, public $location) {
 			$scope.controller = this;
+			$scope.$location = $location;
 
-			$scope.page = this.page;
+			// Set defautl page
+			var page = $location.path() || 'README';
+			$location.path(page);
+
 			$scope.categories = this.categories;
 			$scope.subcategories = this.subcategories;
 		}
