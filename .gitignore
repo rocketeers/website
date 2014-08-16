@@ -13,6 +13,7 @@ public/app/templates
 public/builds
 
 # Dependencies
+public/app/ts/_definitions
 public/components
 node_modules
 vendor
