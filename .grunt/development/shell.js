@@ -11,7 +11,7 @@ module.exports = {
 			'cd vendor/anahkiasen/rocketeer',
 			'composer install',
 			'php bin/compile',
-			'mv bin/rocketeer.phar ../../../output/rocketeer.phar',
+			'mv bin/rocketeer.phar ../../../public/versions/rocketeer.phar',
 		].join('&&'),
 	},
 

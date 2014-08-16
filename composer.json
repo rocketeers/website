@@ -2,7 +2,7 @@
 	"name": "rocketeer/site",
 	"description": "Website for Rocketeer",
 	"require": {
-		"anahkiasen/rocketeer": "dev-develop"
+		"anahkiasen/rocketeer": "1.2.*"
 	},
 	"require-dev": {
 		"phpdocumentor/phpdocumentor": "dev-master"

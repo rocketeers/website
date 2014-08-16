@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 		'concat',
 		'minify',
 		'usemin',
-		//'shell:phar',
+		'shell:phar',
 	]);
 
 	// Flow

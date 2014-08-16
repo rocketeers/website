@@ -4,49 +4,43 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6272a7dfba344fea0baa23ca44944d32",
+    "hash": "c7dc6f8b4f8060e64af040b8b01d2a49",
     "packages": [
         {
             "name": "anahkiasen/rocketeer",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "8e0ef9c3fc86962aa438653f4cf8e20436df191c"
+                "reference": "db681d1784689639dafd7201cf8af2aabd3a4c73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/8e0ef9c3fc86962aa438653f4cf8e20436df191c",
-                "reference": "8e0ef9c3fc86962aa438653f4cf8e20436df191c",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/db681d1784689639dafd7201cf8af2aabd3a4c73",
+                "reference": "db681d1784689639dafd7201cf8af2aabd3a4c73",
                 "shasum": ""
             },
             "require": {
-                "illuminate/config": "~4.2",
-                "illuminate/console": "~4.2",
-                "illuminate/container": "~4.2",
-                "illuminate/events": "~4.2",
-                "illuminate/filesystem": "~4.2",
-                "illuminate/log": "~4.2",
-                "illuminate/remote": "~4.2",
-                "illuminate/support": "~4.2",
-                "kzykhys/parallel": "~0.1.0",
-                "php": ">=5.4.0"
+                "illuminate/config": "~4.1",
+                "illuminate/console": "~4.1",
+                "illuminate/container": "~4.1",
+                "illuminate/events": "~4.1",
+                "illuminate/filesystem": "~4.1",
+                "illuminate/log": "~4.1",
+                "illuminate/remote": "~4.1",
+                "illuminate/support": "~4.1",
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "d11wtq/boris": "~1.0.8",
                 "herrera-io/box": "~1.5.3",
-                "johnkary/phpunit-speedtrap": "dev-master",
                 "mockery/mockery": "~0.9",
                 "nesbot/carbon": "~1.4",
-                "patchwork/utf8": "~1.1",
-                "phpseclib/phpseclib": "~0.3.5",
-                "phpunit/phpunit": "~4.0",
-                "raveren/kint": "~0.9.1"
+                "patchwork/utf8": "~1.1.18",
+                "phpseclib/phpseclib": "~0.3.5"
             },
             "suggest": {
                 "anahkiasen/rocketeer-campfire": "Campfire plugin to create deployments notifications",
-                "anahkiasen/rocketeer-slack": "Slack plugin to create deployments notifications",
-                "ext-pcntl": "Allow parallel deployments"
+                "anahkiasen/rocketeer-slack": "Slack plugin to create deployments notifications"
             },
             "bin": [
                 "bin/rocketeer"
@@ -54,7 +48,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "2.0-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -81,7 +75,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2014-08-14 15:44:12"
+            "time": "2014-08-11 19:34:19"
         },
         {
             "name": "illuminate/config",
@@ -131,12 +125,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "4acf9e4310002470c9cca65279e852734e6e8e24"
+                "reference": "52e1d00c1ae4cb00fc2a6e52f47fac348e05152d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/4acf9e4310002470c9cca65279e852734e6e8e24",
-                "reference": "4acf9e4310002470c9cca65279e852734e6e8e24",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/52e1d00c1ae4cb00fc2a6e52f47fac348e05152d",
+                "reference": "52e1d00c1ae4cb00fc2a6e52f47fac348e05152d",
                 "shasum": ""
             },
             "require": {
@@ -164,20 +158,20 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-01 20:10:19"
+            "time": "2014-08-14 19:53:42"
         },
         {
             "name": "illuminate/container",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:illuminate/container.git",
-                "reference": "97a239a660d7950804781a9cd45f01863f70fa84"
+                "url": "https://github.com/illuminate/container.git",
+                "reference": "b0ebeda85b7300d0330ea759f31d470ad096b183"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/97a239a660d7950804781a9cd45f01863f70fa84",
-                "reference": "97a239a660d7950804781a9cd45f01863f70fa84",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/b0ebeda85b7300d0330ea759f31d470ad096b183",
+                "reference": "b0ebeda85b7300d0330ea759f31d470ad096b183",
                 "shasum": ""
             },
             "require": {
@@ -204,7 +198,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-07-31 02:46:32"
+            "time": "2014-08-14 19:53:42"
         },
         {
             "name": "illuminate/events",
@@ -254,12 +248,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "6b77a63f0925623bbb1ba8b2fdff440c8665fe81"
+                "reference": "7b6a2d948777ba0056f233fb95899be337b3f06b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/6b77a63f0925623bbb1ba8b2fdff440c8665fe81",
-                "reference": "6b77a63f0925623bbb1ba8b2fdff440c8665fe81",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/7b6a2d948777ba0056f233fb95899be337b3f06b",
+                "reference": "7b6a2d948777ba0056f233fb95899be337b3f06b",
                 "shasum": ""
             },
             "require": {
@@ -288,7 +282,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-11 14:20:08"
+            "time": "2014-08-14 19:53:42"
         },
         {
             "name": "illuminate/log",
@@ -296,12 +290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
-                "reference": "16737de55a98eb68d1d843a1614f7d923ba31c37"
+                "reference": "ccd42a3c99418a8c08ee03b0fa419aacde43b7e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/log/zipball/16737de55a98eb68d1d843a1614f7d923ba31c37",
-                "reference": "16737de55a98eb68d1d843a1614f7d923ba31c37",
+                "url": "https://api.github.com/repos/illuminate/log/zipball/ccd42a3c99418a8c08ee03b0fa419aacde43b7e4",
+                "reference": "ccd42a3c99418a8c08ee03b0fa419aacde43b7e4",
                 "shasum": ""
             },
             "require": {
@@ -333,7 +327,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-04 01:40:13"
+            "time": "2014-08-14 19:53:42"
         },
         {
             "name": "illuminate/remote",
@@ -341,12 +335,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/remote.git",
-                "reference": "73bcb8b6f376fc660892f4750d0c40298538f53e"
+                "reference": "87d329d4aa1963109879d3932daf46d727ff95d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/remote/zipball/73bcb8b6f376fc660892f4750d0c40298538f53e",
-                "reference": "73bcb8b6f376fc660892f4750d0c40298538f53e",
+                "url": "https://api.github.com/repos/illuminate/remote/zipball/87d329d4aa1963109879d3932daf46d727ff95d5",
+                "reference": "87d329d4aa1963109879d3932daf46d727ff95d5",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +373,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-07-19 18:57:54"
+            "time": "2014-08-14 19:53:42"
         },
         {
             "name": "illuminate/support",
@@ -387,12 +381,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "6fe2f4fd2250f9e5b490368734368a5189a17d74"
+                "reference": "c139ffbab664cdfa5a535d07c0576b8a45438267"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/6fe2f4fd2250f9e5b490368734368a5189a17d74",
-                "reference": "6fe2f4fd2250f9e5b490368734368a5189a17d74",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/c139ffbab664cdfa5a535d07c0576b8a45438267",
+                "reference": "c139ffbab664cdfa5a535d07c0576b8a45438267",
                 "shasum": ""
             },
             "require": {
@@ -426,43 +420,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-04 01:40:13"
-        },
-        {
-            "name": "kzykhys/parallel",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kzykhys/Parallel.php.git",
-                "reference": "d15bc88f06d279112a0facb6607072dfb48dfc6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kzykhys/Parallel.php/zipball/d15bc88f06d279112a0facb6607072dfb48dfc6f",
-                "reference": "d15bc88f06d279112a0facb6607072dfb48dfc6f",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/php-code-coverage": "1.2.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kazuyuki Hayashi",
-                    "email": "hayashi@valnur.net"
-                }
-            ],
-            "description": "Simple multitasking library",
-            "time": "2014-02-04 13:24:07"
+            "time": "2014-08-14 19:53:42"
         },
         {
             "name": "monolog/monolog",
@@ -542,12 +500,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "cb8f991752e583f0e0c505ee0528da2af4f26045"
+                "reference": "0d7e9199ef9c2f1b37f6d2d8e8727bacd0a8d6ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/cb8f991752e583f0e0c505ee0528da2af4f26045",
-                "reference": "cb8f991752e583f0e0c505ee0528da2af4f26045",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/0d7e9199ef9c2f1b37f6d2d8e8727bacd0a8d6ed",
+                "reference": "0d7e9199ef9c2f1b37f6d2d8e8727bacd0a8d6ed",
                 "shasum": ""
             },
             "require": {
@@ -632,7 +590,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-08-12 09:30:21"
+            "time": "2014-08-15 14:27:31"
         },
         {
             "name": "psr/log",
@@ -684,12 +642,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "0c91f3355f251dc2ac15d9f9c5e04c014c9b729e"
+                "reference": "919345e2757aa3d3aca1d1ce5a8f53f65d1990ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/0c91f3355f251dc2ac15d9f9c5e04c014c9b729e",
-                "reference": "0c91f3355f251dc2ac15d9f9c5e04c014c9b729e",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/919345e2757aa3d3aca1d1ce5a8f53f65d1990ef",
+                "reference": "919345e2757aa3d3aca1d1ce5a8f53f65d1990ef",
                 "shasum": ""
             },
             "require": {
@@ -732,7 +690,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-08 14:32:04"
+            "time": "2014-08-14 16:37:29"
         },
         {
             "name": "symfony/finder",
@@ -741,12 +699,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "3329a4cb19075326ef2cc2abe848aa21b84905cf"
+                "reference": "f6ba24717b0f3a63d447a3c4c80ba7d0ddb42050"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/3329a4cb19075326ef2cc2abe848aa21b84905cf",
-                "reference": "3329a4cb19075326ef2cc2abe848aa21b84905cf",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/f6ba24717b0f3a63d447a3c4c80ba7d0ddb42050",
+                "reference": "f6ba24717b0f3a63d447a3c4c80ba7d0ddb42050",
                 "shasum": ""
             },
             "require": {
@@ -779,7 +737,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-28 13:20:53"
+            "time": "2014-08-14 16:37:29"
         }
     ],
     "packages-dev": [
@@ -2331,12 +2289,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "b21c57ca5656ca52665e2dbd851be44442175be9"
+                "reference": "ba2c477082cf505c1721ea6e68010bb1fcfaef8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/b21c57ca5656ca52665e2dbd851be44442175be9",
-                "reference": "b21c57ca5656ca52665e2dbd851be44442175be9",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/ba2c477082cf505c1721ea6e68010bb1fcfaef8b",
+                "reference": "ba2c477082cf505c1721ea6e68010bb1fcfaef8b",
                 "shasum": ""
             },
             "require": {
@@ -2369,7 +2327,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-05 09:07:51"
+            "time": "2014-08-14 16:37:29"
         },
         {
             "name": "symfony/stopwatch",
@@ -2378,12 +2336,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Stopwatch.git",
-                "reference": "1519513564ba9ef15a5e3c28bf08b904516db1e2"
+                "reference": "1514a74517c22a6bbc632bab8755199151af3d63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/1519513564ba9ef15a5e3c28bf08b904516db1e2",
-                "reference": "1519513564ba9ef15a5e3c28bf08b904516db1e2",
+                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/1514a74517c22a6bbc632bab8755199151af3d63",
+                "reference": "1514a74517c22a6bbc632bab8755199151af3d63",
                 "shasum": ""
             },
             "require": {
@@ -2406,19 +2364,17 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:06:26"
+            "time": "2014-08-14 16:37:29"
         },
         {
             "name": "symfony/translation",
@@ -2482,12 +2438,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Validator.git",
-                "reference": "03cb0083f77b1251d611ff735ac2f46ca2832918"
+                "reference": "a0b1349f74e9e4cc764baee05fba0006fb0d292d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Validator/zipball/03cb0083f77b1251d611ff735ac2f46ca2832918",
-                "reference": "03cb0083f77b1251d611ff735ac2f46ca2832918",
+                "url": "https://api.github.com/repos/symfony/Validator/zipball/a0b1349f74e9e4cc764baee05fba0006fb0d292d",
+                "reference": "a0b1349f74e9e4cc764baee05fba0006fb0d292d",
                 "shasum": ""
             },
             "require": {
@@ -2543,7 +2499,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-07 15:09:41"
+            "time": "2014-08-14 16:37:29"
         },
         {
             "name": "twig/twig",
@@ -3187,7 +3143,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "anahkiasen/rocketeer": 20,
         "phpdocumentor/phpdocumentor": 20
     },
     "prefer-stable": false,
