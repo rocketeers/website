@@ -6,7 +6,7 @@ module Rocketeer {
 		 *
 		 * @type {string}
 		 */
-		page = 'README';
+		page;
 
 		/**
 		 * The available categories
@@ -57,10 +57,11 @@ module Rocketeer {
 			$scope.controller = this;
 			$scope.$location = $location;
 
-			// Set defautl page
+			// Set default page
 			var page = $location.path() || 'README';
 			$location.path(page);
 
+			$scope.year = new Date();
 			$scope.categories = this.categories;
 			$scope.subcategories = this.subcategories;
 		}

@@ -21,7 +21,7 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 </head>
 
-<body ng-app="rocketeer">
+<body ng-app="rocketeer" ng-controller="Rocketeer.AppController">
 	<header class="layout-header">
 		<h1 id="top">
 			Rocketeer
@@ -38,7 +38,7 @@
 		        allowtransparency="true" frameborder="0" scrolling="0" width="252" height="30"></iframe>
 	</section>
 
-	<div class="layout-container" ng-controller="Rocketeer.AppController">
+	<div class="layout-container">
 
 		<aside class="layout-sidebar">
 			<nav ng-repeat="category in categories">
@@ -69,7 +69,7 @@
 	<footer
 		class="layout-footer" id="footer">
 		<a target="_blank" href="https://github.com/rocketeers/website">See the sources for this website</a><br>
-		&copy; 2014 - Maxime Fabre
+		&copy; {{ year | date:'yyyy' }} - <a target="_blank" href="autopergamene.eu/en">Maxime Fabre</a>
 	</footer>
 
 	<!-- build:js builds/js/scripts.js -->
