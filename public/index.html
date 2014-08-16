@@ -23,7 +23,7 @@
 
 <body ng-app="rocketeer">
 	<header class="layout-header">
-		<h1>
+		<h1 id="top">
 			Rocketeer
 			<small>Send your projects up in the clouds</small>
 		</h1>
@@ -53,6 +53,9 @@
 
 		<main class="layout-content">
 			<ul class="layout-submenu" bs-affix>
+				<li>
+					<a href="#top" du-smooth-scroll>Top</a>
+				</li>
 				<li bs-scrollspy data-target="#{{ subcategory.anchor }}" class="link-{{ subcategory.size }}" ng-repeat="subcategory in subcategories">
 					<a href="#{{ subcategory.anchor }}" du-smooth-scroll>{{ subcategory.label }}</a>
 				</li>
