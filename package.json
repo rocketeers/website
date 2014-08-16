@@ -1,17 +1,12 @@
 {
-	"name": "rocketeer",
-	"dependencies": {
-		"bower": "*",
-		"grunt": "*",
-		"grunt-cli": "*",
-		"glob": "*"
-	},
-	"devDependencies": {
-		"grunt-markdown": "*",
-		"grunt-prettify": "*",
-		"grunt-tinypng": "*",
-		"grunt-tslint": "*",
-		"grunt-typescript": "*",
+  "name": "rocketeer",
+  "dependencies": {
+    "bower": "*",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "glob": "*"
+  },
+  "devDependencies": {
     "grunt-angular-templates": "*",
     "grunt-autoprefixer": "*",
     "grunt-bower-task": "*",
@@ -24,15 +19,21 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-csscss": "*",
+    "grunt-markdown": "*",
     "grunt-newer": "*",
     "grunt-ng-annotate": "*",
+    "grunt-prettify": "*",
     "grunt-scss-lint": "*",
     "grunt-shell": "*",
     "grunt-styleguide": "*",
     "grunt-svgmin": "*",
+    "grunt-tinypng": "*",
+    "grunt-tsd": "^0.1.0",
+    "grunt-tslint": "*",
+    "grunt-typescript": "*",
     "grunt-usemin": "*",
     "grunt-webfont": "*",
     "jit-grunt": "*",
-		"tsd": "*"
-	}
+    "tsd": "*"
+  }
 }
