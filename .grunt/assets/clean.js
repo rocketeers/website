@@ -6,6 +6,7 @@ module.exports = {
 	local: [
 		'<%= paths.original.fonts %>',
 		'<%= paths.original.css %>',
+		'<%= paths.original.js %>',
 	],
 };
 
