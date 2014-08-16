@@ -35,7 +35,7 @@ module Rocketeer {
 				label: 'Help',
 				pages: {
 					'Changelog'      : 'CHANGELOG',
-					'Troubleshooting': 'docs/Troubleshooting',
+					'Troubleshooting': 'docs/III-Further/Troubleshooting',
 				}
 			}
 		];
