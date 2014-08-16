@@ -18,24 +18,24 @@ module Rocketeer {
 				label: 'Introduction',
 				pages: {
 					'Introduction'     : 'README',
-					'What\'s Rocketeer': 'wiki/I-Introduction/Whats-Rocketeer',
-					'Getting Started'  : 'wiki/I-Introduction/Getting-started',
+					'What\'s Rocketeer': 'docs/I-Introduction/Whats-Rocketeer',
+					'Getting Started'  : 'docs/I-Introduction/Getting-started',
 				}
 			},
 			{
 				label: 'Concepts',
 				pages: {
-					'Connections and Stages': 'wiki/II-Concepts/Connections-Stages',
-					'Events'                : 'wiki/II-Concepts/Events',
-					'Plugins'               : 'wiki/II-Concepts/Plugins',
-					'Tasks'                 : 'wiki/II-Concepts/Tasks',
+					'Connections and Stages': 'docs/II-Concepts/Connections-Stages',
+					'Events'                : 'docs/II-Concepts/Events',
+					'Plugins'               : 'docs/II-Concepts/Plugins',
+					'Tasks'                 : 'docs/II-Concepts/Tasks',
 				}
 			},
 			{
 				label: 'Help',
 				pages: {
 					'Changelog'      : 'CHANGELOG',
-					'Troubleshooting': 'wiki/Troubleshooting',
+					'Troubleshooting': 'docs/Troubleshooting',
 				}
 			}
 		];

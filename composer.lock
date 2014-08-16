@@ -11,13 +11,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Anahkiasen/rocketeer.git",
-                "reference": "db681d1784689639dafd7201cf8af2aabd3a4c73"
+                "url": "git@github.com:Anahkiasen/rocketeer.git",
+                "reference": "63e3d9e47535828eeaa08ac0075dd73bfde1f5c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/db681d1784689639dafd7201cf8af2aabd3a4c73",
-                "reference": "db681d1784689639dafd7201cf8af2aabd3a4c73",
+                "url": "https://api.github.com/repos/Anahkiasen/rocketeer/zipball/63e3d9e47535828eeaa08ac0075dd73bfde1f5c7",
+                "reference": "63e3d9e47535828eeaa08ac0075dd73bfde1f5c7",
                 "shasum": ""
             },
             "require": {
@@ -39,8 +39,8 @@
                 "phpseclib/phpseclib": "~0.3.5"
             },
             "suggest": {
-                "anahkiasen/rocketeer-campfire": "Campfire plugin to create deployments notifications",
-                "anahkiasen/rocketeer-slack": "Slack plugin to create deployments notifications"
+                "rocketeers/rocketeer-campfire": "Campfire plugin to create deployments notifications",
+                "rocketeers/rocketeer-slack": "Slack plugin to create deployments notifications"
             },
             "bin": [
                 "bin/rocketeer"
@@ -75,7 +75,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2014-08-11 19:34:19"
+            "time": "2014-08-16 17:11:57"
         },
         {
             "name": "illuminate/config",

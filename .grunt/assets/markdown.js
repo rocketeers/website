@@ -8,7 +8,7 @@ module.exports = {
 		files: [
 			{
 				expand: true,
-				src   : 'wiki/**/*.md',
+				src   : 'docs/**/*.md',
 				dest  : '<%= paths.original.templates %>',
 				ext   : '.html',
 			},
