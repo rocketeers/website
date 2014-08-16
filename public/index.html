@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Rocketeer</title>
+	<title>Rocketeer - The fast deployer for modern applications</title>
 
 	<!-- Chrome Frame and Favicon -->
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<link href='assets/img/favicon.png' rel='shortcut icon' />
+	<link href='app/img/favicon.png' rel='shortcut icon' />
 
 	<!-- Stylesheets -->
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<!-- build:css builds/css/styles.css -->
 	<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="components/prism/themes/prism-okaidia.css">
 	<link rel="stylesheet" href="app/css/styles.css">
 	<!-- endbuild -->
-
 
 	<!-- Responsive tags -->
 	<meta name='apple-mobile-web-app-capable' content='yes' />
@@ -27,7 +25,7 @@
 	<header class="layout-header">
 		<h1>
 			Rocketeer
-			<small>A fast deployer for the PHP world</small>
+			<small>Send your projects up in the clouds</small>
 		</h1>
 	</header>
 
@@ -41,29 +39,33 @@
 	</section>
 
 	<div class="layout-container" ng-controller="Rocketeer.AppController">
+
 		<aside class="layout-sidebar">
 			<nav ng-repeat="category in categories">
 				<h2>{{ category.label }}</h2>
 				<ul>
 					<li ng-repeat="label in controller.unsorted(category.pages)" ng-init="link = category.pages[label]" ng-class="{active: $parent.$location.path() == '/'+link}">
 						<a ng-click="$parent.$parent.$location.path(link)">{{ label }}</a>
-
-						<ul ng-if="$parent.$location.path() == '/'+link">
-							<li class="link-{{ subcategory.size }}" ng-repeat="subcategory in subcategories">
-								<a href="#{{ subcategory.anchor }}" du-smooth-scroll>{{ subcategory.label }}</a>
-							</li>
-						</ul>
 					</li>
 				</ul>
 			</nav>
 		</aside>
+
 		<main class="layout-content">
+			<ul class="layout-submenu" bs-affix>
+				<li class="link-{{ subcategory.size }}" ng-repeat="subcategory in subcategories">
+					<a href="#{{ subcategory.anchor }}" du-smooth-scroll>{{ subcategory.label }}</a>
+				</li>
+			</ul>
+
 			<section ng-include="'app/templates/' +$location.path()+ '.html'" onload="controller.highlight()"></section>
 		</main>
+
 	</div>
 
-	<footer class="layout-footer" id="footer">
-		<a href="https://github.com/Anahkiasen/rocketeer/tree/gh-pages">See the sources for this website</a><br>
+	<footer
+		class="layout-footer" id="footer">
+		<a href="https://github.com/rocketeers/website">See the sources for this website</a><br>
 		&copy; 2014 - Maxime Fabre
 	</footer>
 
@@ -73,8 +75,13 @@
 	<script src="components/prism/components/prism-php.js"></script>
 	<script src="components/angular/angular.js"></script>
 	<script src="components/angular-scroll/angular-scroll.js"></script>
+	<script src="components/angular-strap/dist/angular-strap.js"></script>
+	<script src="components/angular-strap/dist/angular-strap.tpl.js"></script>
 	<script src="app/js/Controllers/AppController.js"></script>
 	<script src="app/js/app.js"></script>
 	<!-- endbuild -->
+
+	<script type="text/javascript" src="//use.typekit.net/bhc8bkn.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </body>
 </html>

@@ -7,8 +7,9 @@
 	width: 26em;
 	display: table-cell;
 	vertical-align: top;
+	text-align: right;
 
-	padding: 2rem;
+	padding: 2rem 0;
 
 	background-color: color('cello');
 
@@ -39,7 +40,7 @@
 
 	li {
 		margin: 0;
-		padding: 0.15rem 0.5rem;
+		padding: 0.15rem 1rem;
 
 		&.active,
 		&:hover {
@@ -50,9 +51,9 @@
 				margin: 0.5em 0.25em;
 
 				li {
-					border-left: 3px solid white;
+					border-right: 3px solid white;
 					&:hover {
-						border-left: 3px solid darken($color-base, 5);
+						border-right: 3px solid darken($color-base, 5);
 					}
 				}
 			}
@@ -64,6 +65,8 @@
 
 	h2 {
 		color: white;
+		padding: 0 1rem 0.5rem 0;
+		border-bottom: 1px solid hsla(0, 100%, 100%, 0.1);
 	}
 
 	$spacing: 0.6rem;

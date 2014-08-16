@@ -33,31 +33,6 @@ $inner-padding: 2rem;
 			margin-left: -($inner-padding * 2);
 			padding: 0.5rem 2rem 0.75rem;
 		}
-
-		&:nth-child(2n) {
-			$color: darken($color-base, 5);
-			background-color: $color;
-
-			&,
-			h1:first-of-type,
-			a {
-				color: lighten(black, 90);
-			}
-
-			h2,
-			h3 {
-				color: lighten(color('navy'), 15);
-			}
-
-			&,
-			p,
-			li {
-				& > code {
-					background-color: darken($color, 15);
-					color: white;
-				}
-			}
-		}
 	}
 
 	@include breakpoint(max-width $tablet) {

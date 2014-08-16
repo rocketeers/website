@@ -6,8 +6,9 @@
 pre {
 	padding: 0.75rem;
 	border: none;
-	background: darken($color-base, 5);
-	color: white;
+	background: grey(95);
+	color: grey(60);
+	border-radius: 0;
 
 	@include breakpoint(max-width $tablet) {
 		line-height: 1.2;

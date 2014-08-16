@@ -6,7 +6,8 @@ declare var Prism: {
 //////////////////////////////////////////////////////////////////////
 
 var app = angular.module('rocketeer', [
-	'duScroll'
+	'duScroll',
+	'mgcrea.ngStrap',
 ]);
 
 // Controllers
