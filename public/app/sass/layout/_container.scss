@@ -5,6 +5,7 @@
 
 .layout-container {
 	@include container;
+	width: 100%;
 	display: table;
 }
 
