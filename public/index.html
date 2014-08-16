@@ -10,7 +10,11 @@
 
 	<!-- Stylesheets -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="builds/css/styles.css">
+	<!-- build:css builds/css/styles.css -->
+	<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="components/prism/themes/prism-okaidia.css">
+	<link rel="stylesheet" href="app/css/styles.css">
+	<!-- endbuild -->
 
 
 	<!-- Responsive tags -->
@@ -63,6 +67,14 @@
 		&copy; 2014 - Maxime Fabre
 	</footer>
 
-	<script src="builds/js/scripts.js"></script>
+	<!-- build:js builds/js/scripts.js -->
+	<script src="components/jquery/dist/jquery.js"></script>
+	<script src="components/prism/prism.js"></script>
+	<script src="components/prism/components/prism-php.js"></script>
+	<script src="components/angular/angular.js"></script>
+	<script src="components/angular-scroll/angular-scroll.js"></script>
+	<script src="app/js/Controllers/AppController.js"></script>
+	<script src="app/js/app.js"></script>
+	<!-- endbuild -->
 </body>
 </html>
