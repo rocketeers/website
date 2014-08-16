@@ -53,7 +53,7 @@
 
 		<main class="layout-content">
 			<ul class="layout-submenu" bs-affix>
-				<li class="link-{{ subcategory.size }}" ng-repeat="subcategory in subcategories">
+				<li bs-scrollspy data-target="#{{ subcategory.anchor }}" class="link-{{ subcategory.size }}" ng-repeat="subcategory in subcategories">
 					<a href="#{{ subcategory.anchor }}" du-smooth-scroll>{{ subcategory.label }}</a>
 				</li>
 			</ul>
