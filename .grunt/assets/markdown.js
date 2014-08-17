@@ -15,7 +15,7 @@ module.exports = {
 			{
 				flatten: true,
 				expand: true,
-				src   : 'vendor/anahkiasen/rocketeer/**/*.md',
+				src   : 'vendor/anahkiasen/rocketeer/*.md',
 				dest  : '<%= paths.original.templates %>',
 				ext   : '.html',
 			}
