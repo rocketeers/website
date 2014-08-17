@@ -15,10 +15,10 @@
 	// In other cases you can leave this empty too, and you will
 	// be prompted for the credentials on deploy
 	'username'   => 'Anahkiasen',
-	'password'   => '',
+	'password'   => null,
 
 	// The branch to deploy
-	'branch'     => 'gh-pages',
+	'branch'     => 'master',
 
 	// Whether your SCM should do a "shallow" clone of the repository
 	// or not – this means a clone with just the latest state of your
