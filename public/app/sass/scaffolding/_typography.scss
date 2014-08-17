@@ -51,6 +51,10 @@ a {
 
 ul {
 	list-style-type: square;
+
+	ul {
+		margin-left: 2rem;
+	}
 }
 
 p,

@@ -27,6 +27,7 @@ module.exports = function(grunt) {
 		'concat',
 		'minify',
 		'usemin',
+		'shell:api',
 		'shell:phar',
 	]);
 

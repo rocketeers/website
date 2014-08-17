@@ -4,43 +4,49 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c7dc6f8b4f8060e64af040b8b01d2a49",
+    "hash": "6272a7dfba344fea0baa23ca44944d32",
     "packages": [
         {
             "name": "anahkiasen/rocketeer",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rocketeers/rocketeer.git",
-                "reference": "3726234996ecafb5e3860926633a0e2147e4d41c"
+                "reference": "d8a771b8be345093f03b4999f5c8252f67babdac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rocketeers/rocketeer/zipball/3726234996ecafb5e3860926633a0e2147e4d41c",
-                "reference": "3726234996ecafb5e3860926633a0e2147e4d41c",
+                "url": "https://api.github.com/repos/rocketeers/rocketeer/zipball/d8a771b8be345093f03b4999f5c8252f67babdac",
+                "reference": "d8a771b8be345093f03b4999f5c8252f67babdac",
                 "shasum": ""
             },
             "require": {
-                "illuminate/config": "~4.1",
-                "illuminate/console": "~4.1",
-                "illuminate/container": "~4.1",
-                "illuminate/events": "~4.1",
-                "illuminate/filesystem": "~4.1",
-                "illuminate/log": "~4.1",
-                "illuminate/remote": "~4.1",
-                "illuminate/support": "~4.1",
-                "php": ">=5.3.0"
+                "illuminate/config": "~4.2",
+                "illuminate/console": "~4.2",
+                "illuminate/container": "~4.2",
+                "illuminate/events": "~4.2",
+                "illuminate/filesystem": "~4.2",
+                "illuminate/log": "~4.2",
+                "illuminate/remote": "~4.2",
+                "illuminate/support": "~4.2",
+                "kzykhys/parallel": "~0.1.0",
+                "php": ">=5.4.0"
             },
             "require-dev": {
+                "d11wtq/boris": "~1.0.8",
                 "herrera-io/box": "~1.5.3",
+                "johnkary/phpunit-speedtrap": "dev-master",
                 "mockery/mockery": "~0.9",
                 "nesbot/carbon": "~1.4",
-                "patchwork/utf8": "~1.1.18",
-                "phpseclib/phpseclib": "~0.3.5"
+                "patchwork/utf8": "~1.1",
+                "phpseclib/phpseclib": "~0.3.5",
+                "phpunit/phpunit": "~4.0",
+                "raveren/kint": "~0.9.1"
             },
             "suggest": {
                 "anahkiasen/rocketeer-campfire": "Campfire plugin to create deployments notifications",
-                "anahkiasen/rocketeer-slack": "Slack plugin to create deployments notifications"
+                "anahkiasen/rocketeer-slack": "Slack plugin to create deployments notifications",
+                "ext-pcntl": "Allow parallel deployments"
             },
             "bin": [
                 "bin/rocketeer"
@@ -48,7 +54,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-develop": "2.0-dev"
                 }
             },
             "autoload": {
@@ -75,7 +81,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2014-08-16 19:14:56"
+            "time": "2014-08-17 14:16:14"
         },
         {
             "name": "illuminate/config",
@@ -421,6 +427,42 @@
                 }
             ],
             "time": "2014-08-14 19:53:42"
+        },
+        {
+            "name": "kzykhys/parallel",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kzykhys/Parallel.php.git",
+                "reference": "d15bc88f06d279112a0facb6607072dfb48dfc6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kzykhys/Parallel.php/zipball/d15bc88f06d279112a0facb6607072dfb48dfc6f",
+                "reference": "d15bc88f06d279112a0facb6607072dfb48dfc6f",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/php-code-coverage": "1.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kazuyuki Hayashi",
+                    "email": "hayashi@valnur.net"
+                }
+            ],
+            "description": "Simple multitasking library",
+            "time": "2014-02-04 13:24:07"
         },
         {
             "name": "monolog/monolog",
@@ -3143,6 +3185,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "anahkiasen/rocketeer": 20,
         "phpdocumentor/phpdocumentor": 20
     },
     "prefer-stable": false,

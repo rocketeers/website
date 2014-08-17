@@ -20,9 +20,10 @@ pre {
 }
 
 code {
-	background-color: hsl(190, 48%, 39%);
-	color: white;
+	background-color: grey(90);
+	color: grey(40);
 	font-size: 0.80em;
+	border-radius: 0;
 }
 
 // Overrides for Okaidia theme

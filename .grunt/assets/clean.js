@@ -7,6 +7,7 @@ module.exports = {
 		'<%= paths.original.fonts %>',
 		'<%= paths.original.css %>',
 		'<%= paths.original.js %>',
+		'<%= paths.original.templates %>',
 	],
 };
 

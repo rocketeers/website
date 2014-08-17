@@ -26,16 +26,26 @@ module Rocketeer {
 				label: 'Concepts',
 				pages: {
 					'Connections and Stages': 'docs/II-Concepts/Connections-Stages',
+					'Binaries'              : 'docs/II-Concepts/Binaries',
+					'Strategies'            : 'docs/II-Concepts/Strategies',
 					'Events'                : 'docs/II-Concepts/Events',
 					'Plugins'               : 'docs/II-Concepts/Plugins',
 					'Tasks'                 : 'docs/II-Concepts/Tasks',
 				}
 			},
 			{
+				label: 'Usage',
+				pages: {
+					'Deploying': 'docs/III-Usage/Deploying',
+					'Debugging': 'docs/III-Usage/Debugging',
+				}
+			},
+			{
 				label: 'Help',
 				pages: {
 					'Changelog'      : 'CHANGELOG',
-					'Troubleshooting': 'docs/III-Further/Troubleshooting',
+					'Upgrade Path'   : 'docs/IV-Help/Upgrade-Path',
+					'Troubleshooting': 'docs/IV-Help/Troubleshooting',
 				}
 			}
 		];
@@ -58,7 +68,7 @@ module Rocketeer {
 			$scope.$location = $location;
 
 			// Set default page
-			var page = $location.path() || 'README';
+			var page = $location.path() || 'README';
 			$location.path(page);
 
 			$scope.year = new Date();
@@ -90,6 +100,9 @@ module Rocketeer {
 					size  : header.tagName.toLowerCase(),
 				});
 			});
+
+			// Transform tables
+			$('table').addClass('table table-bordered');
 
 			// Highlight content
 			Prism.highlightAll();
