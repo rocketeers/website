@@ -17,7 +17,7 @@ module.exports = {
 
 	api: {
 		command: [
-			'vendor/bin/phpdoc -t api -d vendor/anahkiasen/rocketeer/src',
+			'vendor/bin/phpdoc -t public/api -d vendor/anahkiasen/rocketeer/src',
 		].join('&&'),
 	}
 };
