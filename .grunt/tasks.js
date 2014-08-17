@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 		'tsd',
 		'clean',
 		'default',
+		'ngtemplates',
 		'ngAnnotate',
 		'useminPrepare',
 		'concat',
