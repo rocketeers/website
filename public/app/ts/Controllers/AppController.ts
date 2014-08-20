@@ -34,18 +34,17 @@ module Rocketeer {
 				}
 			},
 			{
-				label: 'Usage',
+				label: 'Tutorials',
 				pages: {
-					'Deploying': 'docs/III-Usage/Deploying',
-					'Debugging': 'docs/III-Usage/Debugging',
+					'Laravel integration'   : 'docs/IV-Tutorials/Laravel',
 				}
 			},
 			{
 				label: 'Help',
 				pages: {
 					'Changelog'      : 'CHANGELOG',
-					'Upgrade Path'   : 'docs/IV-Help/Upgrade-Path',
-					'Troubleshooting': 'docs/IV-Help/Troubleshooting',
+					'Upgrade Path'   : 'docs/V-Help/Upgrade-Path',
+					'Troubleshooting': 'docs/V-Help/Troubleshooting',
 				}
 			}
 		];

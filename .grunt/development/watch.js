@@ -9,7 +9,7 @@ module.exports = {
 		tasks: 'default',
 	},
 	md: {
-		files: ['index.template.html', 'docs/**/*.md', 'rocketeer/README.md'],
+		files: ['index.template.html', 'docs/**/*.md', 'vendor/anahkiasen/rocketeer/README.md'],
 		tasks: 'md',
 	},
 	img: {

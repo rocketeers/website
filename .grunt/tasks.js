@@ -57,6 +57,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('md', 'Build contents', [
 		'newer:markdown',
 		'newer:prettify',
+		'newer:ngtemplates',
 	]);
 
 	grunt.registerTask('js', 'Build scripts', [
