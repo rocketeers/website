@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rocketeers/rocketeer.git",
-                "reference": "69e7682bb6699f2910f5bafb438d0231d278cfbc"
+                "reference": "f3eb011883f5a7f72883e2150a7ec634fcbde1d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rocketeers/rocketeer/zipball/69e7682bb6699f2910f5bafb438d0231d278cfbc",
-                "reference": "69e7682bb6699f2910f5bafb438d0231d278cfbc",
+                "url": "https://api.github.com/repos/rocketeers/rocketeer/zipball/f3eb011883f5a7f72883e2150a7ec634fcbde1d1",
+                "reference": "f3eb011883f5a7f72883e2150a7ec634fcbde1d1",
                 "shasum": ""
             },
             "require": {
@@ -77,11 +77,12 @@
             ],
             "description": "Rocketeer is a fast and simple deployer for the PHP world",
             "keywords": [
+                "deploy",
                 "deployment",
                 "laravel",
                 "ssh"
             ],
-            "time": "2014-08-20 16:48:07"
+            "time": "2014-08-21 19:42:06"
         },
         {
             "name": "illuminate/config",
@@ -131,12 +132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "52e1d00c1ae4cb00fc2a6e52f47fac348e05152d"
+                "reference": "700fdbbe6e2b96ec218fa3521d7a8a1d3eb947f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/52e1d00c1ae4cb00fc2a6e52f47fac348e05152d",
-                "reference": "52e1d00c1ae4cb00fc2a6e52f47fac348e05152d",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/700fdbbe6e2b96ec218fa3521d7a8a1d3eb947f2",
+                "reference": "700fdbbe6e2b96ec218fa3521d7a8a1d3eb947f2",
                 "shasum": ""
             },
             "require": {
@@ -164,7 +165,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-14 19:53:42"
+            "time": "2014-08-20 06:19:19"
         },
         {
             "name": "illuminate/container",
@@ -341,22 +342,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/remote.git",
-                "reference": "87d329d4aa1963109879d3932daf46d727ff95d5"
+                "reference": "4aecb96a9041f79ec3553c9be91047f3d172a109"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/remote/zipball/87d329d4aa1963109879d3932daf46d727ff95d5",
-                "reference": "87d329d4aa1963109879d3932daf46d727ff95d5",
+                "url": "https://api.github.com/repos/illuminate/remote/zipball/4aecb96a9041f79ec3553c9be91047f3d172a109",
+                "reference": "4aecb96a9041f79ec3553c9be91047f3d172a109",
                 "shasum": ""
             },
             "require": {
-                "illuminate/filesystem": "4.3.*",
-                "illuminate/support": "4.3.*",
+                "illuminate/filesystem": "~4.3",
+                "illuminate/support": "~4.3",
                 "php": ">=5.4.0",
                 "phpseclib/phpseclib": "0.3.*"
             },
             "require-dev": {
-                "illuminate/console": "4.3.*"
+                "illuminate/console": "~4.3"
             },
             "type": "library",
             "extra": {
@@ -379,7 +380,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-14 19:53:42"
+            "time": "2014-08-21 17:54:07"
         },
         {
             "name": "illuminate/support",
@@ -387,12 +388,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "9c6cfa1e66907c6539b57e0b619f2d169d59a799"
+                "reference": "b9c420a3163f54004e1b3a3bbefbcd74af6d20f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/9c6cfa1e66907c6539b57e0b619f2d169d59a799",
-                "reference": "9c6cfa1e66907c6539b57e0b619f2d169d59a799",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/b9c420a3163f54004e1b3a3bbefbcd74af6d20f8",
+                "reference": "b9c420a3163f54004e1b3a3bbefbcd74af6d20f8",
                 "shasum": ""
             },
             "require": {
@@ -426,7 +427,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-20 04:26:49"
+            "time": "2014-08-21 04:38:16"
         },
         {
             "name": "kzykhys/parallel",
@@ -1543,12 +1544,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/phpDocumentor2.git",
-                "reference": "7850691067f2bce17c75ef401069f7b90204d939"
+                "reference": "98b28ee43b314063e759882d3dcece16afc4d9b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/phpDocumentor2/zipball/7850691067f2bce17c75ef401069f7b90204d939",
-                "reference": "7850691067f2bce17c75ef401069f7b90204d939",
+                "url": "https://api.github.com/repos/phpDocumentor/phpDocumentor2/zipball/98b28ee43b314063e759882d3dcece16afc4d9b2",
+                "reference": "98b28ee43b314063e759882d3dcece16afc4d9b2",
                 "shasum": ""
             },
             "require": {
@@ -1591,7 +1592,7 @@
             "require-dev": {
                 "behat/behat": "~2.4",
                 "mikey179/vfsstream": "~1.2",
-                "mockery/mockery": "0.9.*@dev",
+                "mockery/mockery": "dev-master#1b3b265a904cab6f28b72684d7d62abade836e25",
                 "phpunit/phpunit": "~3.7",
                 "squizlabs/php_codesniffer": "~1.4",
                 "symfony/expression-language": "~2.4"
@@ -1634,7 +1635,7 @@
                 "documentation",
                 "phpdoc"
             ],
-            "time": "2014-07-09 19:38:37"
+            "time": "2014-08-20 19:40:09"
         },
         {
             "name": "phpdocumentor/reflection",
