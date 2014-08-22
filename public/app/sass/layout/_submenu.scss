@@ -40,7 +40,7 @@
 	&.affix {
 		left: 0;
 
-		& + section {
+		+ section {
 			margin-top: 2rem;
 		}
 	}

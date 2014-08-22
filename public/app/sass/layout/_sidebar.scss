@@ -9,7 +9,7 @@
 	vertical-align: top;
 	text-align: right;
 
-	padding: 2rem 0;
+	padding: 0 0 2rem;
 
 	background-color: color('cello');
 
@@ -53,6 +53,7 @@
 
 				li {
 					border-right: 3px solid white;
+
 					&:hover {
 						border-right: 3px solid darken($color-base, 5);
 					}

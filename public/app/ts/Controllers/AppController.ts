@@ -30,7 +30,7 @@ module Rocketeer {
 		 */
 		constructor(public $scope, public $location) {
 			this.categories = docs;
-			
+
 			$scope.controller = this;
 			$scope.$location = $location;
 
