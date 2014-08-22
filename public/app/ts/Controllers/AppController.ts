@@ -26,17 +26,25 @@ module Rocketeer {
 				label: 'Concepts',
 				pages: {
 					'Connections and Stages': 'docs/II-Concepts/Connections-Stages',
+					'Tasks'                 : 'docs/II-Concepts/Tasks',
 					'Binaries'              : 'docs/II-Concepts/Binaries',
 					'Strategies'            : 'docs/II-Concepts/Strategies',
 					'Events'                : 'docs/II-Concepts/Events',
 					'Plugins'               : 'docs/II-Concepts/Plugins',
-					'Tasks'                 : 'docs/II-Concepts/Tasks',
+				}
+			},
+			{
+				label: 'Usage',
+				pages: {
+					'Credentials': 'docs/III-Usage/Credentials',
+					'Deploying'  : 'docs/III-Usage/Deploying',
+					'Debugging'  : 'docs/III-Usage/Debugging',
 				}
 			},
 			{
 				label: 'Tutorials',
 				pages: {
-					'Laravel integration'   : 'docs/IV-Tutorials/Laravel',
+					'Laravel integration': 'docs/IV-Tutorials/Laravel',
 				}
 			},
 			{
