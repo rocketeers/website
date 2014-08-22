@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////////////////
 
 .layout-sidebar {
-	width: 26em;
+	width: 20em;
 	display: table-cell;
 	vertical-align: top;
 	text-align: right;
@@ -40,7 +40,8 @@
 
 	li {
 		margin: 0;
-		padding: 0.15rem 1rem;
+		padding: 0.15em 1em;
+		font-size: 1rem;
 
 		&.active,
 		&:hover {
@@ -64,30 +65,10 @@
 	////////////////////////////////////////////////////////////////////
 
 	h2 {
+		font-size: 1.25rem;
+		margin: 0.75em 0 0.25em;
 		color: white;
 		padding: 0 1rem 0.5rem 0;
-		border-bottom: 1px solid hsla(0, 100%, 100%, 0.1);
-	}
-
-	$spacing: 0.6rem;
-
-	.link-h1 {
-		display: none;
-	}
-
-	.link-h2 {
-		padding-left: $spacing * 2;
-		font-size: 1rem;
-	}
-
-	.link-h3 {
-		padding-left: $spacing * 3;
-		font-size: 0.9rem;
-	}
-
-	.link-h3,
-	.link-h4 {
-		padding-left: $spacing * 4;
-		font-size: 0.8rem;
+		border-bottom: 1px solid rgba(white, 0.1);
 	}
 }
