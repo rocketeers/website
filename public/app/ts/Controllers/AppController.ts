@@ -34,25 +34,31 @@ module Rocketeer {
 				}
 			},
 			{
+				label: 'Services',
+				pages: {
+					'TasksQueue': 'docs/III-Services/TasksQueue',
+				}
+			},
+			{
 				label: 'Usage',
 				pages: {
-					'Credentials': 'docs/III-Usage/Credentials',
-					'Deploying'  : 'docs/III-Usage/Deploying',
-					'Debugging'  : 'docs/III-Usage/Debugging',
+					'Credentials': 'docs/IV-Usage/Credentials',
+					'Deploying'  : 'docs/IV-Usage/Deploying',
+					'Debugging'  : 'docs/IV-Usage/Debugging',
 				}
 			},
 			{
 				label: 'Tutorials',
 				pages: {
-					'Laravel integration': 'docs/IV-Tutorials/Laravel',
+					'Laravel integration': 'docs/V-Tutorials/Laravel',
 				}
 			},
 			{
 				label: 'Help',
 				pages: {
 					'Changelog'      : 'CHANGELOG',
-					'Upgrade Path'   : 'docs/V-Help/Upgrade-Path',
-					'Troubleshooting': 'docs/V-Help/Troubleshooting',
+					'Upgrade Path'   : 'docs/VI-Help/Upgrade-Path',
+					'Troubleshooting': 'docs/VI-Help/Troubleshooting',
 				}
 			}
 		];
