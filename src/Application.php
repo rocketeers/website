@@ -25,7 +25,6 @@ class Application extends Container
 			'paths.cache' => $root.'/cache',
 		);
 
-		$this->instance('docs', new DocumentationGatherer());
 		$this->registerThirdParty();
 	}
 
