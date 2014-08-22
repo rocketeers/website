@@ -1,0 +1,5 @@
+{% extends '_layouts/default.twig' %}
+
+{% block content %}
+	<section ng-include="'app/templates' +$location.path()+ '.html'" onload="controller.highlight()"></section>
+{% endblock %}

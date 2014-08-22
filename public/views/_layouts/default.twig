@@ -1,0 +1,16 @@
+{% extends '_layouts/global.twig' %}
+
+{% block layout %}
+	{% include '_partials/header.twig' %}
+
+	<div class="layout-container">
+		{% include '_partials/sidebar.twig' %}
+
+		<main class="layout-content">
+			{% include '_partials/submenu.twig' %}
+			{% block content %}{% endblock %}
+		</main>
+	</div>
+
+	{% include '_partials/footer.twig' %}
+{% endblock %}

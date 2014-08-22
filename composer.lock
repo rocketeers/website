@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6272a7dfba344fea0baa23ca44944d32",
+    "hash": "5fc4993fd1a886fadcbe41fc18c8e8c0",
     "packages": [
         {
             "name": "anahkiasen/rocketeer",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rocketeers/rocketeer.git",
-                "reference": "f3eb011883f5a7f72883e2150a7ec634fcbde1d1"
+                "reference": "933d27cf5c621e57233400c4accf7396747c3e95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rocketeers/rocketeer/zipball/f3eb011883f5a7f72883e2150a7ec634fcbde1d1",
-                "reference": "f3eb011883f5a7f72883e2150a7ec634fcbde1d1",
+                "url": "https://api.github.com/repos/rocketeers/rocketeer/zipball/933d27cf5c621e57233400c4accf7396747c3e95",
+                "reference": "933d27cf5c621e57233400c4accf7396747c3e95",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +82,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2014-08-21 19:42:06"
+            "time": "2014-08-22 21:07:08"
         },
         {
             "name": "illuminate/config",
@@ -132,12 +132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "700fdbbe6e2b96ec218fa3521d7a8a1d3eb947f2"
+                "reference": "4f7221b2f9fee57dbb3c934b97325bd68d32f57c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/700fdbbe6e2b96ec218fa3521d7a8a1d3eb947f2",
-                "reference": "700fdbbe6e2b96ec218fa3521d7a8a1d3eb947f2",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/4f7221b2f9fee57dbb3c934b97325bd68d32f57c",
+                "reference": "4f7221b2f9fee57dbb3c934b97325bd68d32f57c",
                 "shasum": ""
             },
             "require": {
@@ -165,7 +165,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-20 06:19:19"
+            "time": "2014-08-22 03:21:00"
         },
         {
             "name": "illuminate/container",
@@ -297,12 +297,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
-                "reference": "ccd42a3c99418a8c08ee03b0fa419aacde43b7e4"
+                "reference": "5504fbcaa5808225a2d966cddc034c20473ed9bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/log/zipball/ccd42a3c99418a8c08ee03b0fa419aacde43b7e4",
-                "reference": "ccd42a3c99418a8c08ee03b0fa419aacde43b7e4",
+                "url": "https://api.github.com/repos/illuminate/log/zipball/5504fbcaa5808225a2d966cddc034c20473ed9bd",
+                "reference": "5504fbcaa5808225a2d966cddc034c20473ed9bd",
                 "shasum": ""
             },
             "require": {
@@ -334,7 +334,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-14 19:53:42"
+            "time": "2014-08-21 21:45:29"
         },
         {
             "name": "illuminate/remote",
@@ -388,12 +388,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "b9c420a3163f54004e1b3a3bbefbcd74af6d20f8"
+                "reference": "31ba1e23c1a88c803a649ea915190bc60ed2c0bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/b9c420a3163f54004e1b3a3bbefbcd74af6d20f8",
-                "reference": "b9c420a3163f54004e1b3a3bbefbcd74af6d20f8",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/31ba1e23c1a88c803a649ea915190bc60ed2c0bb",
+                "reference": "31ba1e23c1a88c803a649ea915190bc60ed2c0bb",
                 "shasum": ""
             },
             "require": {
@@ -427,7 +427,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-21 04:38:16"
+            "time": "2014-08-22 04:39:26"
         },
         {
             "name": "kzykhys/parallel",
@@ -781,6 +781,63 @@
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
             "time": "2014-08-14 16:37:29"
+        },
+        {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Twig.git",
+                "reference": "e2d2a250d963dd5bba4ad23fc01c7282fc042946"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/e2d2a250d963dd5bba4ad23fc01c7282fc042946",
+                "reference": "e2d2a250d963dd5bba4ad23fc01c7282fc042946",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.16-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2014-08-06 06:46:32"
         }
     ],
     "packages-dev": [
@@ -1697,23 +1754,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "38743b677965c48a637097b2746a281264ae2347"
+                "reference": "0604d62704156ae1337800b25db91ea9289b3af4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/38743b677965c48a637097b2746a281264ae2347",
-                "reference": "38743b677965c48a637097b2746a281264ae2347",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/0604d62704156ae1337800b25db91ea9289b3af4",
+                "reference": "0604d62704156ae1337800b25db91ea9289b3af4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*@stable"
+                "phpunit/phpunit": "~4.0"
             },
             "suggest": {
-                "dflydev/markdown": "1.0.*",
-                "erusev/parsedown": "~0.7"
+                "dflydev/markdown": "~1.0",
+                "erusev/parsedown": "~1.0"
             },
             "type": "library",
             "extra": {
@@ -1738,7 +1795,7 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "time": "2014-08-09 10:27:07"
+            "time": "2014-08-21 21:05:07"
         },
         {
             "name": "phpdocumentor/template-abstract",
@@ -2542,63 +2599,6 @@
             "description": "Symfony Validator Component",
             "homepage": "http://symfony.com",
             "time": "2014-08-19 09:39:05"
-        },
-        {
-            "name": "twig/twig",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
-                "reference": "e2d2a250d963dd5bba4ad23fc01c7282fc042946"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/e2d2a250d963dd5bba4ad23fc01c7282fc042946",
-                "reference": "e2d2a250d963dd5bba4ad23fc01c7282fc042946",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.16-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Twig_": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                },
-                {
-                    "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
-                    "role": "Contributors"
-                }
-            ],
-            "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "http://twig.sensiolabs.org",
-            "keywords": [
-                "templating"
-            ],
-            "time": "2014-08-06 06:46:32"
         },
         {
             "name": "zendframework/zend-cache",

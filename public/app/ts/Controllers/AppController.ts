@@ -13,55 +13,7 @@ module Rocketeer {
 		 *
 		 * @type {any[]}
 		 */
-		categories = [
-			{
-				label: 'Introduction',
-				pages: {
-					'Introduction'     : 'README',
-					'What\'s Rocketeer': 'docs/I-Introduction/Whats-Rocketeer',
-					'Getting Started'  : 'docs/I-Introduction/Getting-started',
-				}
-			},
-			{
-				label: 'Concepts',
-				pages: {
-					'Connections and Stages': 'docs/II-Concepts/Connections-Stages',
-					'Tasks'                 : 'docs/II-Concepts/Tasks',
-					'Binaries'              : 'docs/II-Concepts/Binaries',
-					'Strategies'            : 'docs/II-Concepts/Strategies',
-					'Events'                : 'docs/II-Concepts/Events',
-					'Plugins'               : 'docs/II-Concepts/Plugins',
-				}
-			},
-			{
-				label: 'Services',
-				pages: {
-					'TasksQueue': 'docs/III-Services/TasksQueue',
-				}
-			},
-			{
-				label: 'Usage',
-				pages: {
-					'Credentials': 'docs/IV-Usage/Credentials',
-					'Deploying'  : 'docs/IV-Usage/Deploying',
-					'Debugging'  : 'docs/IV-Usage/Debugging',
-				}
-			},
-			{
-				label: 'Tutorials',
-				pages: {
-					'Laravel integration': 'docs/V-Tutorials/Laravel',
-				}
-			},
-			{
-				label: 'Help',
-				pages: {
-					'Changelog'      : 'CHANGELOG',
-					'Upgrade Path'   : 'docs/VI-Help/Upgrade-Path',
-					'Troubleshooting': 'docs/VI-Help/Troubleshooting',
-				}
-			}
-		];
+		categories;
 
 		/**
 		 * The subcategories
@@ -77,6 +29,8 @@ module Rocketeer {
 		 * @ngInject
 		 */
 		constructor(public $scope, public $location) {
+			this.categories = docs;
+			
 			$scope.controller = this;
 			$scope.$location = $location;
 

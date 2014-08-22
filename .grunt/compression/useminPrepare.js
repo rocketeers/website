@@ -4,6 +4,6 @@ module.exports = {
 	},
 
 	dist: {
-		src: 'public/index.html',
+		src: 'public/index.php',
 	},
 };

@@ -1,3 +1,3 @@
 module.exports = {
-	html: 'public/index.html',
+	html: 'public/index.php',
 };

@@ -1,0 +1,13 @@
+{% verbatim %}
+<ul class="layout-submenu" data-offset-top="500" bs-affix>
+	<li class="layout-submenu__actions">
+		<a href="#top" du-smooth-scroll>Top</a>
+	</li>
+	<li class="layout-submenu__actions">
+		<a href="https://github.com/rocketeers/docs/edit/develop{{ $location.path().replace('docs/', '') }}.md" target="_blank">Edit</a>
+	</li>
+	<li bs-scrollspy data-target="#{{ subcategory.anchor }}" class="link-{{ subcategory.size }}" ng-repeat="subcategory in subcategories">
+		<a href="#{{ subcategory.anchor }}" du-smooth-scroll>{{ subcategory.label }}</a>
+	</li>
+</ul>
+{% endverbatim %}

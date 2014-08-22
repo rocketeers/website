@@ -2,10 +2,17 @@
 	"name": "rocketeer/site",
 	"description": "Website for Rocketeer",
 	"require": {
-		"anahkiasen/rocketeer": "dev-develop"
+		"anahkiasen/rocketeer": "dev-develop",
+		"symfony/finder": "2.6.*",
+		"twig/twig": "~1.16.0"
 	},
 	"require-dev": {
 		"phpdocumentor/phpdocumentor": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"Rocketeer\\Website\\": "src"
+		}
 	},
 	"authors": [
 		{
