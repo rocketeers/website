@@ -12,13 +12,20 @@ class DocumentationGatherer
 	protected $documentation = [];
 
 	/**
+	 * The folder where documentation resides
+	 *
+	 * @type string
+	 */
+	protected $folder = 'docs';
+
+	/**
 	 * @return array
 	 */
 	public function getDocumentation()
 	{
 		// Gather files
 		$files = new Finder();
-		$files = $files->in(__DIR__.'/../docs/docs/*')->name('*.md')->files();
+		$files = $files->in(__DIR__.'/../' .$this->folder. '/docs/*')->name('*.md')->files();
 		foreach ($files as $file) {
 			$this->addPage($file);
 		}
@@ -50,7 +57,7 @@ class DocumentationGatherer
 		$name   = $file->getBasename('.md');
 		$handle = str_replace('-', ' ', $name);
 
-		$this->documentation[$category]['pages'][$handle] = 'docs/'.$folder.'/'.$name;
+		$this->documentation[$category]['pages'][$handle] = $this->folder.'/docs/'.$folder.'/'.$name;
 	}
 
 	/**
@@ -58,7 +65,7 @@ class DocumentationGatherer
 	 */
 	protected function addCustomPages()
 	{
-		$this->documentation['Introduction']['pages'] = ['Introduction' => 'README'] + $this->documentation['Introduction']['pages'];
-		$this->documentation['Help']['pages']         = ['Changelog' => 'CHANGELOG'] + $this->documentation['Help']['pages'];
+		$this->documentation['Introduction']['pages'] = ['Introduction' => $this->folder.'/rocketeer/README'] + $this->documentation['Introduction']['pages'];
+		$this->documentation['Help']['pages']         = ['Changelog' => $this->folder.'/rocketeer/CHANGELOG'] + $this->documentation['Help']['pages'];
 	}
 }

@@ -7,9 +7,8 @@ module.exports = {
 	dist: {
 		files: [
 			{
-				flatten: true,
 				expand: true,
-				src   : 'docs/docs/**/*.md',
+				src   : 'docs/**/*.md',
 				dest  : '<%= paths.original.templates %>',
 				ext   : '.html',
 			}

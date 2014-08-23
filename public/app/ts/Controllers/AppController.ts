@@ -35,7 +35,7 @@ module Rocketeer {
 			$scope.$location = $location;
 
 			// Set default page
-			var page = $location.path() || 'README';
+			var page = $location.path() || 'docs/rocketeer/README';
 			$location.path(page);
 
 			$scope.year = new Date();
