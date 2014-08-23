@@ -29,8 +29,6 @@ return array(
 	// Use this to list folders that need to keep their state, like
 	// user uploaded data, file-based databases, etc.
 	'shared'         => array(
-		'{path.storage}/logs',
-		'{path.storage}/sessions',
 	),
 
 	// Execution
@@ -38,7 +36,7 @@ return array(
 
 	// If enabled will force a shell to be created
 	// which is requried for some tools like RVM or NVM
-	'shell'          => false,
+	'shell'          => true,
 
 	// An array of commands to run under shell
 	'shelled'        => ['which', 'ruby', 'npm', 'bower', 'bundle', 'grunt'],
