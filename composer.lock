@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rocketeers/rocketeer.git",
-                "reference": "933d27cf5c621e57233400c4accf7396747c3e95"
+                "reference": "c3c402eba755422cfa37e8497290a5e504085bbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rocketeers/rocketeer/zipball/933d27cf5c621e57233400c4accf7396747c3e95",
-                "reference": "933d27cf5c621e57233400c4accf7396747c3e95",
+                "url": "https://api.github.com/repos/rocketeers/rocketeer/zipball/c3c402eba755422cfa37e8497290a5e504085bbf",
+                "reference": "c3c402eba755422cfa37e8497290a5e504085bbf",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +82,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2014-08-22 21:07:08"
+            "time": "2014-08-23 14:45:46"
         },
         {
             "name": "illuminate/config",
@@ -90,15 +90,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
-                "reference": "06d3cf80d6ffd89aded464409dbc7381104d5e83"
+                "reference": "43d27760b24daaf7ceeb7caa53eb8ad0f776848b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/config/zipball/06d3cf80d6ffd89aded464409dbc7381104d5e83",
-                "reference": "06d3cf80d6ffd89aded464409dbc7381104d5e83",
+                "url": "https://api.github.com/repos/illuminate/config/zipball/43d27760b24daaf7ceeb7caa53eb8ad0f776848b",
+                "reference": "43d27760b24daaf7ceeb7caa53eb8ad0f776848b",
                 "shasum": ""
             },
             "require": {
+                "illuminate/contracts": "4.3.*",
                 "illuminate/filesystem": "4.3.*",
                 "illuminate/support": "4.3.*",
                 "php": ">=5.4.0"
@@ -124,7 +125,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-07-19 18:57:54"
+            "time": "2014-08-22 18:43:48"
         },
         {
             "name": "illuminate/console",
@@ -132,12 +133,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "4f7221b2f9fee57dbb3c934b97325bd68d32f57c"
+                "reference": "889385f426e28020e072cefa75483b6a924293ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/4f7221b2f9fee57dbb3c934b97325bd68d32f57c",
-                "reference": "4f7221b2f9fee57dbb3c934b97325bd68d32f57c",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/889385f426e28020e072cefa75483b6a924293ac",
+                "reference": "889385f426e28020e072cefa75483b6a924293ac",
                 "shasum": ""
             },
             "require": {
@@ -165,7 +166,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-22 03:21:00"
+            "time": "2014-08-22 06:25:43"
         },
         {
             "name": "illuminate/container",
@@ -173,15 +174,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "b0ebeda85b7300d0330ea759f31d470ad096b183"
+                "reference": "3727920e49dde75b8c709346fa5a7a0d849c7d5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/b0ebeda85b7300d0330ea759f31d470ad096b183",
-                "reference": "b0ebeda85b7300d0330ea759f31d470ad096b183",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/3727920e49dde75b8c709346fa5a7a0d849c7d5a",
+                "reference": "3727920e49dde75b8c709346fa5a7a0d849c7d5a",
                 "shasum": ""
             },
             "require": {
+                "illuminate/contracts": "4.3.*",
                 "php": ">=5.4.0"
             },
             "type": "library",
@@ -205,7 +207,47 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-14 19:53:42"
+            "time": "2014-08-22 18:43:48"
+        },
+        {
+            "name": "illuminate/contracts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/contracts.git",
+                "reference": "c95dac375ee37770d7ffe3bed9ad32403bd535a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/c95dac375ee37770d7ffe3bed9ad32403bd535a9",
+                "reference": "c95dac375ee37770d7ffe3bed9ad32403bd535a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Contracts\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "time": "2014-08-23 04:06:37"
         },
         {
             "name": "illuminate/events",
@@ -213,16 +255,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "17b257b52d8f3d1e41e0ba4ac560cd8b059b0cae"
+                "reference": "2854dd31121d853d515530a486e0d2d8992121e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/17b257b52d8f3d1e41e0ba4ac560cd8b059b0cae",
-                "reference": "17b257b52d8f3d1e41e0ba4ac560cd8b059b0cae",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/2854dd31121d853d515530a486e0d2d8992121e3",
+                "reference": "2854dd31121d853d515530a486e0d2d8992121e3",
                 "shasum": ""
             },
             "require": {
                 "illuminate/container": "4.3.*",
+                "illuminate/contracts": "4.3.*",
                 "illuminate/support": "4.3.*",
                 "php": ">=5.4.0"
             },
@@ -247,7 +290,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-04 01:40:13"
+            "time": "2014-08-22 18:43:48"
         },
         {
             "name": "illuminate/filesystem",
@@ -255,12 +298,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "7b6a2d948777ba0056f233fb95899be337b3f06b"
+                "reference": "7d9f1b36036b07dfbdb9100a125066b6adc7ecf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/7b6a2d948777ba0056f233fb95899be337b3f06b",
-                "reference": "7b6a2d948777ba0056f233fb95899be337b3f06b",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/7d9f1b36036b07dfbdb9100a125066b6adc7ecf0",
+                "reference": "7d9f1b36036b07dfbdb9100a125066b6adc7ecf0",
                 "shasum": ""
             },
             "require": {
@@ -297,21 +340,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
-                "reference": "5504fbcaa5808225a2d966cddc034c20473ed9bd"
+                "reference": "a247a29d82c902dfa947d176e777ea575e0331c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/log/zipball/5504fbcaa5808225a2d966cddc034c20473ed9bd",
-                "reference": "5504fbcaa5808225a2d966cddc034c20473ed9bd",
+                "url": "https://api.github.com/repos/illuminate/log/zipball/a247a29d82c902dfa947d176e777ea575e0331c4",
+                "reference": "a247a29d82c902dfa947d176e777ea575e0331c4",
                 "shasum": ""
             },
             "require": {
+                "illuminate/contracts": "4.3.*",
                 "illuminate/support": "4.3.*",
                 "monolog/monolog": "~1.6",
                 "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "illuminate/events": "4.3.*"
             },
             "type": "library",
             "extra": {
@@ -334,7 +375,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-21 21:45:29"
+            "time": "2014-08-22 18:43:48"
         },
         {
             "name": "illuminate/remote",
@@ -388,15 +429,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "31ba1e23c1a88c803a649ea915190bc60ed2c0bb"
+                "reference": "dea72c654e23ce177cfef139b168cf0fd15317d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/31ba1e23c1a88c803a649ea915190bc60ed2c0bb",
-                "reference": "31ba1e23c1a88c803a649ea915190bc60ed2c0bb",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/dea72c654e23ce177cfef139b168cf0fd15317d2",
+                "reference": "dea72c654e23ce177cfef139b168cf0fd15317d2",
                 "shasum": ""
             },
             "require": {
+                "illuminate/contracts": "4.3.*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -427,7 +469,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-22 04:39:26"
+            "time": "2014-08-22 18:43:48"
         },
         {
             "name": "kzykhys/parallel",
