@@ -1,5 +1,6 @@
 module.exports = {
 	options: {
+		root: 'public',
 		dest: 'public',
 	},
 

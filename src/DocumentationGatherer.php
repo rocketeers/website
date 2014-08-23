@@ -32,6 +32,7 @@ class DocumentationGatherer
 
 		// Add custom pages
 		$this->addCustomPages();
+		unset($this->documentation['API']);
 
 		return array_values($this->documentation);
 	}

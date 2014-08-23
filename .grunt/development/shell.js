@@ -4,7 +4,7 @@ module.exports = {
 			'cd docs/rocketeer',
 			'composer install',
 			'php bin/compile',
-			'mv bin/rocketeer.phar ../../../public/versions/rocketeer.phar',
+			'mv bin/rocketeer.phar ../../public/versions/rocketeer.phar',
 		].join('&&'),
 	},
 
