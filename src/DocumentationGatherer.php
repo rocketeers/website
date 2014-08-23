@@ -66,6 +66,9 @@ class DocumentationGatherer
 	protected function addCustomPages()
 	{
 		$this->documentation['Introduction']['pages'] = ['Introduction' => $this->folder.'/rocketeer/README'] + $this->documentation['Introduction']['pages'];
-		$this->documentation['Help']['pages']         = ['Changelog' => $this->folder.'/rocketeer/CHANGELOG'] + $this->documentation['Help']['pages'];
+
+		if (isset($this->documentation['Help'])) {
+			$this->documentation['Help']['pages'] = ['Changelog' => $this->folder.'/rocketeer/CHANGELOG'] + $this->documentation['Help']['pages'];
+		}
 	}
 }
