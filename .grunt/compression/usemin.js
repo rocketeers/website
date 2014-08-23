@@ -1,3 +1,3 @@
 module.exports = {
-	html: 'public/index.php',
+	html: 'public/views/**/*.twig',
 };

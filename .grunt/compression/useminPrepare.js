@@ -4,6 +4,6 @@ module.exports = {
 	},
 
 	dist: {
-		src: 'public/index.php',
+		src: 'public/views/**/*.twig',
 	},
 };

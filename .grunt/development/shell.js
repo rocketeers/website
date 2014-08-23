@@ -1,14 +1,7 @@
 module.exports = {
-	deploy: {
-		command: [
-			'git push',
-			'php vendor/bin/rocketeer deploy --verbose'
-		].join('&&')
-	},
-
 	phar: {
 		command: [
-			'cd vendor/anahkiasen/rocketeer',
+			'cd docs/rocketeer',
 			'composer install',
 			'php bin/compile',
 			'mv bin/rocketeer.phar ../../../public/versions/rocketeer.phar',
@@ -17,7 +10,7 @@ module.exports = {
 
 	api: {
 		command: [
-			'vendor/bin/phpdoc -t public/api -d vendor/anahkiasen/rocketeer/src',
+			'vendor/bin/phpdoc -t public/api -d docs/rocketeer/src',
 		].join('&&'),
 	}
 };
