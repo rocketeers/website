@@ -1,3 +1,9 @@
 [submodule "rocketeer"]
 	path = rocketeer
 	url = https://github.com/Anahkiasen/rocketeer.git
+[submodule "docs/rocketeer"]
+	path = docs/rocketeer
+	url = git@github.com:rocketeers/rocketeer.git
+[submodule "docs/docs"]
+	path = docs/docs
+	url = git@github.com:rocketeers/docs.git

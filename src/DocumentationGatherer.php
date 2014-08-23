@@ -18,7 +18,7 @@ class DocumentationGatherer
 	{
 		// Gather files
 		$files = new Finder();
-		$files = $files->in(__DIR__.'/../docs/*')->name('*.md')->files();
+		$files = $files->in(__DIR__.'/../docs/docs/*')->name('*.md')->files();
 		foreach ($files as $file) {
 			$this->addPage($file);
 		}

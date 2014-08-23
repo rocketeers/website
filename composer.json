@@ -2,8 +2,7 @@
 	"name": "rocketeer/site",
 	"description": "Website for Rocketeer",
 	"require": {
-		"anahkiasen/rocketeer": "dev-develop",
-		"symfony/finder": "2.6.*",
+		"symfony/finder": "~2.5.3",
 		"twig/twig": "~1.16.0"
 	},
 	"require-dev": {
@@ -22,6 +21,5 @@
 	],
 	"config": {
 		"preferred-install": "dist"
-	},
-	"minimum-stability": "dev"
+	}
 }

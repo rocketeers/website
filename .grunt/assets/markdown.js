@@ -7,15 +7,9 @@ module.exports = {
 	dist: {
 		files: [
 			{
-				expand: true,
-				src   : 'docs/**/*.md',
-				dest  : '<%= paths.original.templates %>',
-				ext   : '.html',
-			},
-			{
 				flatten: true,
 				expand: true,
-				src   : 'vendor/anahkiasen/rocketeer/*.md',
+				src   : 'docs/docs/**/*.md',
 				dest  : '<%= paths.original.templates %>',
 				ext   : '.html',
 			}
