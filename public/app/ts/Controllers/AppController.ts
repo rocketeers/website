@@ -71,6 +71,9 @@ module Rocketeer {
 			// Transform tables
 			$('table').addClass('table table-bordered');
 
+			// Transform download links
+			$('a[href="http://rocketeer.autopergamene.eu/versions/rocketeer.phar"]').attr('target', '_blank').attr('download', '');
+
 			// Highlight content
 			Prism.highlightAll();
 
