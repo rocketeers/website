@@ -5,21 +5,17 @@ module.exports = function(grunt) {
 	////////////////////////////////////////////////////////////////////
 
 	grunt.registerTask('default', 'Build assets for local', [
-		'css',
-		'js',
-		'md',
-		'copy',
+		'concurrent:build',
 	]);
 
 	grunt.registerTask('rebuild', 'Rebuild all assets from scratch', [
-		'clean',
-		'compass:clean',
-		'default',
+		'concurrent:clean',
+		'concurrent:build',
 	]);
 
 	grunt.registerTask('production', 'Build assets for production', [
 		'tsd',
-		'clean',
+		'rebuild',
 		'default',
 		'ngtemplates',
 		'ngAnnotate',
@@ -37,12 +33,8 @@ module.exports = function(grunt) {
 		'newer:uglify',
 	]);
 
-	grunt.registerTask('images', 'Recompress images', [
-		'newer:svgmin',
-		'newer:tinypng',
-	]);
-
 	grunt.registerTask('lint', 'Lint the files', [
+		'phplint',
 		'tslint',
 		'scsslint',
 		'csslint',
@@ -59,7 +51,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('js', 'Build scripts', [
-		'typescript',
+		'newer:typescript',
 	]);
 
 	grunt.registerTask('css', 'Build stylesheets', [
