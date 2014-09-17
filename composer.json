@@ -5,7 +5,7 @@
 		"symfony/finder": "~2.5.3",
 		"twig/twig": "~1.16.0",
 		"illuminate/container": "4.2.*",
-		"phpdocumentor/phpdocumentor": "~2.7.0",
+		"phpdocumentor/phpdocumentor": "~2.7.0"
 	},
 	"require-dev": {
 		"raveren/kint": "~0.9.1"
