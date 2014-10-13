@@ -10,7 +10,7 @@ module.exports = {
 			removeScriptTypeAttributes:     true,
 			removeStyleLinkTypeAttributes:  true
 		},
-		url    : function (url) {
+		url: function(url) {
 			return url.replace('public/', '');
 		}
 	},

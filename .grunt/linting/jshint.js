@@ -31,5 +31,5 @@ module.exports = {
 		predef  : ['marked', 'Rainbow'],
 	},
 
-	all: ['<%= paths.original.js %>/*'],
+	all: ['<%= files.js %>'],
 };

@@ -17,11 +17,11 @@ module.exports = {
 		tasks: 'copy',
 	},
 	js: {
-		files: '<%= paths.original.ts %>/**/*',
+		files: ['<%= files.ts', '<%= paths.original.templates %>/**/*'],
 		tasks: 'js',
 	},
 	css: {
-		files: '<%= paths.original.sass %>/**/*',
+		files: '<%= files.sass %>',
 		tasks: 'css',
 	},
 };

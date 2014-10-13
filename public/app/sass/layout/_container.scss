@@ -5,8 +5,8 @@
 
 .layout-container {
 	@include container;
-	width: 100%;
 	display: table;
+	width: 100%;
 }
 
 $inner-padding: 2rem;
@@ -23,16 +23,16 @@ $inner-padding: 2rem;
 
 		h1:first-of-type {
 			@extend %reset-margins;
-			width: 100%;
 			box-sizing: border-box;
-			color: $color-accent;
-			text-transform: uppercase;
-			text-align: center;
-			font-weight: 100;
+			width: 100%;
 			margin-bottom: 2rem;
-			font-size: 5rem;
 			margin-left: -($inner-padding * 2);
 			padding: 0.5rem 2rem 0.75rem;
+			text-transform: uppercase;
+			text-align: center;
+			color: $color-accent;
+			font-size: 5rem;
+			font-weight: 100;
 		}
 	}
 
@@ -42,10 +42,10 @@ $inner-padding: 2rem;
 			padding-top: 0;
 
 			h1:first-child {
-				font-size: 3rem;
-				padding: 0.5rem 1rem;
-				margin-left: -1rem;
 				margin-bottom: 1rem;
+				margin-left: -1rem;
+				padding: 0.5rem 1rem;
+				font-size: 3rem;
 			}
 		}
 	}
