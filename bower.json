@@ -5,7 +5,7 @@
     "jquery": "~2.1.1",
     "prism": "#gh-pages",
     "angular": "~1.2.22",
-    "angular-scroll": "~0.6.1",
-    "angular-strap": "~2.0.5"
+    "angular-scroll": "~0.6.2",
+    "angular-strap": "~2.1.1"
   }
 }

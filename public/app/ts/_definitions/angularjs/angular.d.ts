@@ -424,6 +424,7 @@ declare module ng {
         // Documentation states viewValue and modelValue to be a string but other
         // types do work and it's common to use them.
         $setViewValue(value: any): void;
+        $setPristine(): void;
         $validate(): void;
         $setTouched(): void;
         $setUntouched(): void;
@@ -1284,6 +1285,29 @@ declare module ng {
     interface ISCEDelegateProvider extends IServiceProvider {
         resourceUrlBlacklist(blacklist: any[]): void;
         resourceUrlWhitelist(whitelist: any[]): void;
+    }
+
+    /**
+     * $templateRequest service
+     * see http://docs.angularjs.org/api/ng/service/$templateRequest
+     */
+    interface ITemplateRequestService {
+        /**
+         * Downloads a template using $http and, upon success, stores the
+         * contents inside of $templateCache.
+         *
+         * If the HTTP request fails or the response data of the HTTP request is
+         * empty then a $compile error will be thrown (unless
+         * {ignoreRequestError} is set to true).
+         *
+         * @param tpl                  The template URL.
+         * @param ignoreRequestError   Whether or not to ignore the exception
+         *                             when the request fails or the template is
+         *                             empty.
+         *
+         * @return   A promise whose value is the template content.
+         */
+        (tpl: string, ignoreRequestError?: boolean): IPromise<string>;
     }
 
     ///////////////////////////////////////////////////////////////////////////
