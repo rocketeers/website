@@ -7,5 +7,8 @@
     "angular": "~1.2.22",
     "angular-scroll": "~0.6.2",
     "angular-strap": "~2.1.1"
+  },
+  "resolutions": {
+    "angular": "~1.2.22"
   }
 }
