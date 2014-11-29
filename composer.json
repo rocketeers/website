@@ -1,27 +1,27 @@
 {
-	"name": "rocketeer/site",
-	"description": "Website for Rocketeer",
-	"require": {
-		"symfony/finder": "~2.5.3",
-		"twig/twig": "~1.16.0",
-		"illuminate/container": "4.2.*",
-		"phpdocumentor/phpdocumentor": "~2.7.0"
-	},
-	"require-dev": {
-		"raveren/kint": "~0.9.1"
-	},
-	"autoload": {
-		"psr-4": {
-			"Rocketeer\\Website\\": "src"
-		}
-	},
-	"authors": [
-		{
-			"name" : "Maxime Fabre",
-			"email": "ehtnam6@gmail.com"
-		}
-	],
-	"config": {
-		"preferred-install": "dist"
-	}
+  "name": "rocketeer/site",
+  "description": "Website for Rocketeer",
+  "require": {
+    "symfony/finder": "~2.5.3",
+    "twig/twig": "~1.16.0",
+    "illuminate/container": "4.2.*",
+    "phpdocumentor/phpdocumentor": "~2.7.0"
+  },
+  "require-dev": {
+    "raveren/kint": "~0.9.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rocketeer\\Website\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Maxime Fabre",
+      "email": "ehtnam6@gmail.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist"
+  }
 }
