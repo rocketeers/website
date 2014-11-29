@@ -1,5 +1,7 @@
 <?php
 use Rocketeer\Facades\Rocketeer;
+use Rocketeer\Website\Deployment\RocketeerPhar;
+use Rocketeer\Website\Deployment\SatellitePhar;
 
 // Tasks
 //////////////////////////////////////////////////////////////////////
@@ -8,17 +10,6 @@ Rocketeer::task(
 	'grunt',
 	'node_modules/.bin/grunt production --force',
 	'Build the assets and archives'
-);
-
-Rocketeer::task(
-	'phar',
-	array(
-		'cd docs/rocketeer',
-		'composer install',
-		'php bin/compile',
-		'mv bin/rocketeer.phar ../../public/versions/rocketeer.phar',
-	),
-	'Generates the final PHAR'
 );
 
 Rocketeer::task(
@@ -32,6 +23,7 @@ Rocketeer::task(
 
 Rocketeer::listenTo('deploy.before-symlink', array(
 	'grunt',
-	'phar',
+	RocketeerPhar::class,
+	SatellitePhar::class,
 	'phpdoc',
 ));
