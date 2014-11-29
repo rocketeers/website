@@ -7,3 +7,6 @@
 [submodule "docs/docs"]
 	path = docs/docs
 	url = git@github.com:rocketeers/docs.git
+[submodule "docs/satellite"]
+	path = docs/satellite
+	url = git@github.com:rocketeers/satellite.git
