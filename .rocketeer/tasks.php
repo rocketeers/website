@@ -1,4 +1,6 @@
 <?php
+require __DIR__.'/../vendor/autoload.php';
+
 use Rocketeer\Facades\Rocketeer;
 use Rocketeer\Website\Deployment\RocketeerPhar;
 use Rocketeer\Website\Deployment\SatellitePhar;

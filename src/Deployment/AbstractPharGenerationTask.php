@@ -3,7 +3,7 @@ namespace Rocketeer\Website\Deployment;
 
 use Rocketeer\Abstracts\AbstractTask;
 
-class AbstractPharGenerationTask extends AbstractTask
+abstract class AbstractPharGenerationTask extends AbstractTask
 {
 	/**
 	 * The name of the repository
@@ -11,6 +11,16 @@ class AbstractPharGenerationTask extends AbstractTask
 	 * @type string
 	 */
 	protected $repository;
+
+	/**
+	 * @type string
+	 */
+	protected $name = 'PharGeneration';
+
+	/**
+	 * @type string
+	 */
+	protected $description = 'Generates the PHAR of a repository';
 
 	/**
 	 * Run the task
