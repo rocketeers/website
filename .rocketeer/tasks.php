@@ -5,6 +5,8 @@ use Rocketeer\Facades\Rocketeer;
 use Rocketeer\Website\Deployment\RocketeerPhar;
 use Rocketeer\Website\Deployment\SatellitePhar;
 
+Rocketeer::configure('dependencies', ['shared_dependencies' => true]);
+
 // Tasks
 //////////////////////////////////////////////////////////////////////
 
