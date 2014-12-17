@@ -108,7 +108,7 @@ class GeneratePharsCommand extends Command
 	protected function generatePhar($tag)
 	{
 		$destination = $this->phars.'/rocketeer-'.$tag.'.phar';
-		if (file_exists($destination)) {
+		if (file_exists($destination) && !in_array($tag, ['master', 'develop'])) {
 			return;
 		}
 
