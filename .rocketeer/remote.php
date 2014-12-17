@@ -29,6 +29,7 @@ return array(
 	// Use this to list folders that need to keep their state, like
 	// user uploaded data, file-based databases, etc.
 	'shared'         => array(
+		'public/versions',
 	),
 
 	// Execution
@@ -41,7 +42,7 @@ return array(
 	// An array of commands to run under shell
 	'shelled'        => ['which', 'ruby', 'npm', 'bower', 'bundle', 'grunt'],
 
-	// Permissions$
+	// Permissions
 	////////////////////////////////////////////////////////////////////
 
 	'permissions'    => array(

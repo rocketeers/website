@@ -3,6 +3,7 @@ namespace Rocketeer\Website\Console;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Input\InputOption;
 
 class GeneratePharsCommand extends Command
 {
@@ -41,7 +42,6 @@ class GeneratePharsCommand extends Command
 		$this->phars     = realpath(__DIR__.'/../../public/versions');
 	}
 
-
 	/**
 	 * Execute the command
 	 */
@@ -70,6 +70,20 @@ class GeneratePharsCommand extends Command
 		$this->comment('Generating current version archive');
 		$this->copyLatestArchive($tags);
 	}
+
+	/**
+	 * @return array
+	 */
+	public function getOptions()
+	{
+		return array(
+			['force', 'F', InputOption::VALUE_NONE, 'Force the recompilation of all PHARs'],
+		);
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	////////////////////////////// VERSIONS //////////////////////////////
+	//////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Get the available Rocketeer versions
@@ -109,7 +123,7 @@ class GeneratePharsCommand extends Command
 	protected function generatePhar($tag)
 	{
 		$destination = $this->phars.'/rocketeer-'.$tag.'.phar';
-		if (file_exists($destination) && !in_array($tag, ['master', 'develop'])) {
+		if (file_exists($destination) && !in_array($tag, ['master', 'develop']) && !$this->option('force')) {
 			return;
 		}
 
