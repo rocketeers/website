@@ -51,6 +51,7 @@ class GeneratePharsCommand extends Command
 		$this->comment('Updating repository');
 		$this->executeCommands(array(
 			'cd '.$this->rocketeer,
+			'git checkout master',
 			'git fetch -pt',
 			'git reset --hard',
 			'git pull',
