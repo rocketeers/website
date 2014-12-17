@@ -32,6 +32,11 @@ class GeneratePharsCommand extends Command
 	protected $phars;
 
 	/**
+	 * @type ProgressBar
+	 */
+	protected $progress;
+
+	/**
 	 * Setup the command
 	 */
 	public function __construct()
@@ -58,14 +63,13 @@ class GeneratePharsCommand extends Command
 		));
 
 		$this->comment('Generating archives...');
-		$tags = $this->getAvailableVersions();
-		$progress = new ProgressBar($this->output, count($tags));
-		$progress->start();
+		$tags           = $this->getAvailableVersions();
+		$this->progress = $this->getProgressBar($tags);
 		foreach ($tags as $tag) {
-			$progress->advance();
 			$this->generatePhar($tag);
+			$this->progress->advance();
 		}
-		$progress->finish();
+		$this->progress->finish();
 
 		$this->comment('Generating current version archive');
 		$this->copyLatestArchive($tags);
@@ -101,7 +105,9 @@ class GeneratePharsCommand extends Command
 
 		// Merge
 		$versions = array_merge($branches, $tags);
-		$versions = array_map('trim', $versions);
+		$versions = array_map(function ($version) {
+			return trim($version, ' *');
+		}, $versions);
 
 		// Filter out the ones before a PHAR was available
 		$versions = array_filter($versions, function ($tag) {
@@ -123,22 +129,36 @@ class GeneratePharsCommand extends Command
 	protected function generatePhar($tag)
 	{
 		$destination = $this->phars.'/rocketeer-'.$tag.'.phar';
+		$this->progress->setMessage("[$tag] Checking for archive existence");
 		if (file_exists($destination) && !in_array($tag, ['master', 'develop']) && !$this->option('force')) {
 			return;
 		}
 
+		$this->progress->setMessage("[$tag] Preparing release");
 		$this->executeCommands(array(
 			'cd '.$this->rocketeer,
 			'git reset --hard',
-			'git checkout '.$tag,
+			'git checkout '.trim($tag, ' *'),
 			'composer update',
+		));
+
+		$this->progress->setMessage("[$tag] Compiling");
+		$this->executeCommands(array(
+			'cd '.$this->rocketeer,
 			'php '.$this->rocketeer.'/bin/compile',
+		));
+
+		$this->progress->setMessage("[$tag] Moving archive");
+		$this->executeCommands(array(
+			'cd '.$this->rocketeer,
 			'mv '.$this->rocketeer.'/bin/rocketeer.phar '.$destination,
 		));
 	}
 
 	/**
 	 * Copy the latest version as rocketeer.phar
+	 *
+	 * @param array $tags
 	 *
 	 * @return integer
 	 */
@@ -164,9 +184,29 @@ class GeneratePharsCommand extends Command
 	 */
 	protected function executeCommands($commands)
 	{
+		// Suppress output
+		foreach ($commands as &$command) {
+			$command .= ' 2> /dev/null';
+		}
+
+		// Merge and execute
 		$commands = implode(' && ', $commands);
 		exec($commands, $output);
 
 		return $output;
+	}
+
+	/**
+	 * @param array $tags
+	 *
+	 * @return ProgressBar
+	 */
+	protected function getProgressBar($tags)
+	{
+		$progress = new ProgressBar($this->output, count($tags));
+		$progress->setFormat(' %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s% - %message%');
+		$progress->start();
+
+		return $progress;
 	}
 }
