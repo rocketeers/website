@@ -129,6 +129,7 @@ class GeneratePharsCommand extends Command
 
 		$this->executeCommands(array(
 			'cd '.$this->rocketeer,
+			'git reset --hard',
 			'git checkout '.$tag,
 			'composer update',
 			'php '.$this->rocketeer.'/bin/compile',
