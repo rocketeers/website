@@ -32,10 +32,10 @@ return array(
 		'production' => array(
 			'host'      => 'autopergamene.eu',
 			'username'  => '',
-			'password'  => '',
+			'password'  => false,
 			'key'       => '/Users/anahkiasen/.ssh/id_rsa',
-			'keyphrase' => '',
-			'agent'     => '',
+			'keyphrase' => false,
+			'agent'     => false,
 		),
 	),
 
