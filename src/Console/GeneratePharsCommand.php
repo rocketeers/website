@@ -130,7 +130,7 @@ class GeneratePharsCommand extends Command
 		$this->executeCommands(array(
 			'cd '.$this->rocketeer,
 			'git checkout '.$tag,
-			'composer install',
+			'composer update',
 			'php '.$this->rocketeer.'/bin/compile',
 			'mv '.$this->rocketeer.'/bin/rocketeer.phar '.$destination,
 		));
