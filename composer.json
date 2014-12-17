@@ -2,10 +2,11 @@
   "name": "rocketeer/site",
   "description": "Website for Rocketeer",
   "require": {
-    "symfony/finder": "~2.5.3",
-    "twig/twig": "~1.16.0",
-    "illuminate/container": "4.2.*",
-    "phpdocumentor/phpdocumentor": "~2.7.0"
+    "symfony/finder": "~2.6",
+    "twig/twig": "~1.16",
+    "illuminate/container": "~4.2",
+    "phpdocumentor/phpdocumentor": "~2.7",
+    "illuminate/console": "~4.2"
   },
   "autoload": {
     "psr-4": {
