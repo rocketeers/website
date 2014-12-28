@@ -126,16 +126,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.1",
+            "version": "v1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633"
+                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/6a6bec0670bb6e71a263b08bc1b98ea242928633",
-                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/eeda578cbe24a170331a1cfdf78be723412df7a4",
+                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-09-25 16:45:30"
+            "time": "2014-12-20 20:49:38"
         },
         {
             "name": "doctrine/lexer",
@@ -445,17 +445,17 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v4.2.12",
+            "version": "v4.2.16",
             "target-dir": "Illuminate/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "72c3123300cdc329209756a3e504057310b4ac0a"
+                "reference": "eae32985d08f3f2c6d4f4a3d2c61ac8780905e42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/72c3123300cdc329209756a3e504057310b4ac0a",
-                "reference": "72c3123300cdc329209756a3e504057310b4ac0a",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/eae32985d08f3f2c6d4f4a3d2c61ac8780905e42",
+                "reference": "eae32985d08f3f2c6d4f4a3d2c61ac8780905e42",
                 "shasum": ""
             },
             "require": {
@@ -483,21 +483,21 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-09-16 13:06:15"
+            "time": "2014-12-16 17:45:06"
         },
         {
             "name": "illuminate/container",
-            "version": "v4.2.12",
+            "version": "v4.2.16",
             "target-dir": "Illuminate/Container",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "f997841ddce41ebf3202b698c021a81f69f7be9b"
+                "reference": "8db091c1b4e503ef8dcd4586d5c63e3997bc4e89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/f997841ddce41ebf3202b698c021a81f69f7be9b",
-                "reference": "f997841ddce41ebf3202b698c021a81f69f7be9b",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/8db091c1b4e503ef8dcd4586d5c63e3997bc4e89",
+                "reference": "8db091c1b4e503ef8dcd4586d5c63e3997bc4e89",
                 "shasum": ""
             },
             "require": {
@@ -524,7 +524,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-09-24 01:34:02"
+            "time": "2014-12-17 20:39:51"
         },
         {
             "name": "jms/metadata",
@@ -2272,16 +2272,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.16.2",
+            "version": "v1.16.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
                 "shasum": ""
             },
             "require": {
@@ -2316,7 +2316,7 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
                     "role": "Contributors"
                 }
             ],
@@ -2325,7 +2325,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-10-17 12:53:44"
+            "time": "2014-12-25 19:58:19"
         },
         {
             "name": "zendframework/zend-cache",

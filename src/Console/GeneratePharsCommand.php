@@ -97,24 +97,26 @@ class GeneratePharsCommand extends Command
 	protected function getAvailableVersions()
 	{
 		// Get available tags
-		$tags = $this->executeCommands(['cd '.$this->rocketeer, 'git tag -l']);
+		$tags = (array) $this->executeCommands(['cd '.$this->rocketeer, 'git tag -l']);
 
 		// Get available branches
-		$branches = $this->executeCommands(['cd '.$this->rocketeer, 'git branch']);
-		$branches = array_slice($branches, 1);
+		$branches = (array) $this->executeCommands(['cd '.$this->rocketeer, 'git branch -al']);
 
 		// Merge
 		$versions = array_merge($branches, $tags);
 		$versions = array_map(function ($version) {
-			return trim($version, ' *');
+			$version = trim($version, ' *');
+			$version = str_replace('remotes/origin/', null, $version);
+
+			return $version;
 		}, $versions);
 
 		// Filter out the ones before a PHAR was available
-		$versions = array_filter($versions, function ($tag) {
-			return $tag && substr($tag, 0, 1) !== '0';
+		$versions = array_filter($versions, function ($version) {
+			return $version && strpos($version, 'HEAD') === false && substr($version, 0, 1) !== '0';
 		});
 
-		return array_values($versions);
+		return array_unique(array_values($versions));
 	}
 
 	//////////////////////////////////////////////////////////////////////
@@ -128,7 +130,7 @@ class GeneratePharsCommand extends Command
 	 */
 	protected function generatePhar($tag)
 	{
-		$destination = $this->phars.'/rocketeer-'.$tag.'.phar';
+		$destination = $this->phars.'/rocketeer-'.str_replace('/', '-', $tag).'.phar';
 		$this->progress->setMessage("[$tag] Checking for archive existence");
 		if (file_exists($destination) && !in_array($tag, ['master', 'develop']) && !$this->option('force')) {
 			return;
