@@ -64,7 +64,7 @@ class GeneratePharsCommand extends Command
     {
         foreach ($this->sources as $name => $source) {
             $this->current = $name;
-            $this->generatePharsFor();
+            $this->generatePhars();
         }
     }
 
@@ -119,7 +119,7 @@ class GeneratePharsCommand extends Command
     /**
      * Generate the Phars for a repository
      */
-    protected function generatePharsFor()
+    protected function generatePhars()
     {
         // Update repository
         $this->comment('Updating repository');
@@ -132,13 +132,10 @@ class GeneratePharsCommand extends Command
         ));
 
         $this->comment('Generating archives...');
-        $tags           = $this->getAvailableVersions();
-        $this->progress = $this->getProgressBar($tags);
+        $tags = $this->getAvailableVersions();
         foreach ($tags as $tag) {
             $this->generatePhar($tag);
-            $this->progress->advance();
         }
-        $this->progress->finish();
 
         $this->comment('Generating current version archive');
         $this->copyLatestArchive($tags);
@@ -151,14 +148,16 @@ class GeneratePharsCommand extends Command
      */
     protected function generatePhar($tag)
     {
+        $handle      = $this->current.'/'.$tag;
         $source      = $this->sources[$this->current];
         $destination = $this->getPharDestination(str_replace('/', '-', $tag));
-        $this->progress->setMessage("[$tag] Checking for archive existence");
         if (file_exists($destination) && !in_array($tag, ['master', 'develop']) && !$this->option('force')) {
+            $this->line("[$handle] Archive exists already, skipping");
+
             return;
         }
 
-        $this->progress->setMessage("[$tag] Preparing release");
+        $this->comment("[$handle] Preparing release");
         $this->executeCommands(array(
             'cd '.$source,
             'git reset --hard',
@@ -166,13 +165,13 @@ class GeneratePharsCommand extends Command
             'composer update',
         ));
 
-        $this->progress->setMessage("[$tag] Compiling");
+        $this->comment("[$handle] Compiling");
         $this->executeCommands(array(
             'cd '.$source,
             'php '.$source.'/bin/compile',
         ));
 
-        $this->progress->setMessage("[$tag] Moving archive");
+        $this->success("[$handle] Moving archive");
         $this->executeCommands(array(
             'cd '.$source,
             'mv '.$source.'/bin/'.$this->current.'.phar '.$destination,
