@@ -150,8 +150,11 @@ class GeneratePharsCommand extends Command
     {
         $handle      = $this->current.'/'.$tag;
         $source      = $this->sources[$this->current];
+        $isBranchTag = in_array($tag, ['master', 'develop']);
         $destination = $this->getPharDestination(str_replace('/', '-', $tag));
-        if (file_exists($destination) && !in_array($tag, ['master', 'develop']) && !$this->option('force')) {
+
+        // Cancel if already compiled
+        if (file_exists($destination) && !$isBranchTag && !$this->option('force')) {
             $this->line("[$handle] Archive exists already, skipping");
 
             return;
@@ -162,8 +165,20 @@ class GeneratePharsCommand extends Command
             'cd '.$source,
             'git reset --hard',
             'git checkout '.trim($tag, ' *'),
-            'composer update',
+            'git reset --hard',
+            'git clean -df',
         ));
+
+        $this->comment("[$handle] Updating repository");
+        $commands = $isBranchTag ? [
+            'cd '.$source,
+            'git pull',
+            'composer update'
+        ] : [
+            'cd '.$source,
+            'composer update'
+        ];
+        $this->executeCommands($commands);
 
         $this->comment("[$handle] Compiling");
         $this->executeCommands(array(
@@ -171,7 +186,7 @@ class GeneratePharsCommand extends Command
             'php '.$source.'/bin/compile',
         ));
 
-        $this->success("[$handle] Moving archive");
+        $this->comment("[$handle] Moving archive");
         $this->executeCommands(array(
             'cd '.$source,
             'mv '.$source.'/bin/'.$this->current.'.phar '.$destination,
@@ -207,9 +222,9 @@ class GeneratePharsCommand extends Command
      */
     protected function executeCommands($commands)
     {
-        // Suppress output
-        foreach ($commands as &$command) {
-            $command .= ' 2> /dev/null';
+        // Display commands
+        foreach ($commands as $command) {
+            $this->line('<fg=magenta>$ '.$command.'</fg=magenta>');
         }
 
         // Merge and execute
