@@ -15,7 +15,7 @@ module.exports = {
 		}
 	},
 
-	weholi: {
+	rocketeer: {
 		src : '<%= paths.original.templates %>/**/*.html',
 		dest: '<%= paths.compiled.js %>/templates.js',
 	},
