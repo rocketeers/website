@@ -8,7 +8,7 @@ module.exports = {
 		files: [
 			{
 				expand: true,
-				src   : 'docs/**/*.md',
+				src   : ['docs/**/*.md', '!docs/rocketeer/vendor/**/*'],
 				dest  : '<%= paths.original.templates %>',
 				ext   : '.html',
 			}

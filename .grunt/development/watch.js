@@ -1,7 +1,7 @@
 module.exports = {
 	options: {
-		livereload : true,
-		interrupt  : true,
+		livereload: true,
+		interrupt : true,
 	},
 
 	grunt: {
@@ -12,15 +12,15 @@ module.exports = {
 		files: ['index.template.html', 'docs/**/*.md', 'vendor/anahkiasen/rocketeer/README.md'],
 		tasks: 'md',
 	},
-	img: {
+	img  : {
 		files: '<%= paths.original.img %>/**/*',
 		tasks: 'copy',
 	},
-	js: {
+	js   : {
 		files: ['<%= files.ts %>', '<%= paths.original.templates %>/**/*'],
 		tasks: 'js',
 	},
-	css: {
+	css  : {
 		files: '<%= files.sass %>',
 		tasks: 'css',
 	},
