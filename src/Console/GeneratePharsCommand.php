@@ -95,26 +95,20 @@ class GeneratePharsCommand extends Command
     protected function getAvailableVersions()
     {
         // Get available tags
-        $tags = (array) $this->executeCommands(['cd '.$this->sources[$this->current], 'git tag -l']);
+        $versions = [];
+        $tags     = (array) $this->executeCommands(['cd '.$this->sources[$this->current], 'git show-ref']);
+        foreach ($tags as $tag) {
+            $tag  = explode(' ', $tag);
+            $sha1 = $tag[0];
+            $tag  = explode('/', $tag[1]);
+            $tag  = end($tag);
 
-        // Get available branches
-        $branches = (array) $this->executeCommands(['cd '.$this->sources[$this->current], 'git branch -al']);
+            $versions[$tag] = $sha1;
+        }
 
-        // Merge
-        $versions = array_merge($branches, $tags);
-        $versions = array_map(function ($version) {
-            $version = trim($version, ' *');
-            $version = str_replace('remotes/origin/', null, $version);
+        unset($versions['HEAD']);
 
-            return $version;
-        }, $versions);
-
-        // Filter out the ones before a PHAR was available
-        $versions = array_filter($versions, function ($version) {
-            return $version && strpos($version, 'HEAD') === false && substr($version, 0, 1) !== '0';
-        });
-
-        return array_unique(array_values($versions));
+        return $versions;
     }
 
     //////////////////////////////////////////////////////////////////////
@@ -140,8 +134,8 @@ class GeneratePharsCommand extends Command
 
         $this->comment('Generating archives...');
         $tags = $this->getAvailableVersions();
-        foreach ($tags as $tag) {
-            $this->generatePhar($tag);
+        foreach ($tags as $tag => $sha1) {
+            $this->generatePhar($tag, $sha1);
         }
 
         $this->comment('Generating current version archive');
@@ -152,8 +146,9 @@ class GeneratePharsCommand extends Command
      * Generate the archive for a version
      *
      * @param string $tag
+     * @param string $sha1
      */
-    protected function generatePhar($tag)
+    protected function generatePhar($tag, $sha1)
     {
         $handle      = $this->current.'/'.$tag;
         $source      = $this->sources[$this->current];
@@ -162,7 +157,7 @@ class GeneratePharsCommand extends Command
         $basename    = basename($destination);
 
         // Update manifest
-        $this->updateManifest($tag, $basename);
+        $this->updateManifest($tag, $sha1, $basename);
 
         // Cancel if already compiled
         if (file_exists($destination) && !$isBranchTag && !$this->option('force')) {
@@ -290,17 +285,20 @@ class GeneratePharsCommand extends Command
     }
 
     /**
+     * Update the Box manifest
+     *
      * @param string $tag
+     * @param string $sha1
      * @param string $basename
      */
-    protected function updateManifest($tag, $basename)
+    protected function updateManifest($tag, $sha1, $basename)
     {
         $manifest = file_get_contents(self::MANIFEST);
         $manifest = json_decode($manifest, true);
 
         $manifest[] = array(
             'name'    => $basename,
-            'sha1'    => $tag,
+            'sha1'    => $sha1,
             'url'     => 'http://rocketeer.autopergamene.eu/versions/'.$basename,
             'version' => $tag,
         );
