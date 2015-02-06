@@ -8,6 +8,11 @@ use Symfony\Component\Console\Input\InputOption;
 class GeneratePharsCommand extends Command
 {
     /**
+     * Path to the manifest
+     */
+    const MANIFEST = 'public/versions/manifest.json';
+
+    /**
      * @type string
      */
     protected $name = 'phars';
@@ -121,6 +126,8 @@ class GeneratePharsCommand extends Command
      */
     protected function generatePhars()
     {
+        $this->resetManifest();
+
         // Update repository
         $this->comment('Updating repository');
         $this->executeCommands(array(
@@ -152,6 +159,10 @@ class GeneratePharsCommand extends Command
         $source      = $this->sources[$this->current];
         $isBranchTag = in_array($tag, ['master', 'develop']);
         $destination = $this->getPharDestination(str_replace('/', '-', $tag));
+        $basename    = basename($destination);
+
+        // Update manifest
+        $this->updateManifest($tag, $basename);
 
         // Cancel if already compiled
         if (file_exists($destination) && !$isBranchTag && !$this->option('force')) {
@@ -259,5 +270,37 @@ class GeneratePharsCommand extends Command
         $name .= $version ? '-'.$version : null;
 
         return $this->phars.'/'.$name.'.phar';
+    }
+
+    //////////////////////////////////////////////////////////////////////
+    ////////////////////////////// MANIFEST //////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+
+    /**
+     * Reset the contents of the manifest
+     */
+    protected function resetManifest()
+    {
+        file_put_contents(self::MANIFEST, '[]');
+    }
+
+    /**
+     * @param string $tag
+     * @param string $basename
+     */
+    protected function updateManifest($tag, $basename)
+    {
+        $manifest = file_get_contents(self::MANIFEST);
+        $manifest = json_decode($manifest, true);
+
+        $manifest[] = array(
+            'name'    => $basename,
+            'sha1'    => $tag,
+            'url'     => 'http://rocketeer.autopergamene.eu/versions/'.$basename,
+            'version' => $tag,
+        );
+
+        $manifest = json_encode($manifest, JSON_PRETTY_PRINT);
+        file_put_contents(self::MANIFEST, $manifest);
     }
 }
