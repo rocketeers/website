@@ -21,5 +21,8 @@
   ],
   "config": {
     "preferred-install": "dist"
+  },
+  "require-dev": {
+    "kherge/box": "~2.5"
   }
 }

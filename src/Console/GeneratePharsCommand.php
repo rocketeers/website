@@ -192,9 +192,10 @@ class GeneratePharsCommand extends Command
         $this->executeCommands($commands);
 
         $this->comment("[$handle] Compiling");
+        $compiler = in_array($tag, ['develop']) ? 'vendor/bin/box build -v' : 'php '.$source.'/bin/compile';
         $this->executeCommands(array(
             'cd '.$source,
-            'php '.$source.'/bin/compile',
+            $compiler,
         ));
 
         $this->comment("[$handle] Moving archive");
@@ -241,6 +242,10 @@ class GeneratePharsCommand extends Command
         // Merge and execute
         $commands = implode(' && ', $commands);
         exec($commands, $output);
+
+        foreach ($output as $line) {
+            $this->line('-- '.$line);
+        }
 
         return $output;
     }
