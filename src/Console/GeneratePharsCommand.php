@@ -192,7 +192,7 @@ class GeneratePharsCommand extends Command
         $this->executeCommands($commands);
 
         $this->comment("[$handle] Compiling");
-        $compiler = in_array($tag, ['develop']) ? 'vendor/bin/box build -v' : 'php '.$source.'/bin/compile';
+        $compiler = in_array($tag, ['develop']) ? '../../vendor/bin/box build -v' : 'php '.$source.'/bin/compile';
         $this->executeCommands(array(
             'cd '.$source,
             $compiler,
