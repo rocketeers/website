@@ -28,5 +28,4 @@ Rocketeer::task(
 Rocketeer::listenTo('deploy.before-symlink', array(
 	'grunt',
 	'phpdoc',
-	'php app.php phars -vvv',
 ));

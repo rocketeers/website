@@ -19,11 +19,11 @@ return array(
 	////////////////////////////////////////////////////////////////////
 
 	// The root directory where your applications will be deployed
-	'root_directory' => '/home/www/',
+	'root_directory' => '/home/forge/',
 
 	// The folder the application will be cloned in
 	// Leave empty to use `application_name` as your folder name
-	'app_directory'  => '',
+	'app_directory'  => 'rocketeer.autopergamene.eu',
 
 	// A list of folders/file to be shared between releases
 	// Use this to list folders that need to keep their state, like
