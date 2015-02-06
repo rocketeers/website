@@ -23,6 +23,7 @@
     "preferred-install": "dist"
   },
   "require-dev": {
-    "kherge/box": "~2.5"
+    "kherge/box": "~2.5",
+    "symfony/var-dumper": "~2.6"
   }
 }
