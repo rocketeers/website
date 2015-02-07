@@ -2,6 +2,7 @@
 namespace Rocketeer\Website\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -96,16 +97,17 @@ class GeneratePharsCommand extends Command
     {
         // Get available tags
         $versions = [];
-        $tags     = (array) $this->executeCommands(['cd '.$this->sources[$this->current], 'git show-ref']);
+        $tags     = (array) $this->executeCommands(['cd '.$this->sources[$this->current], 'git show-ref --tags --heads']);
         foreach ($tags as $tag) {
             $tag  = explode(' ', $tag);
             $sha1 = $tag[0];
             $tag  = preg_replace('#refs/(tags|remotes|heads)(/origin)?/(.+)#', '$3', $tag[1]);
+            if (Str::contains($tag, ['feature/', 'master'])) {
+                continue;
+            }
 
             $versions[$tag] = $sha1;
         }
-
-        unset($versions['HEAD']);
 
         return $versions;
     }
@@ -299,7 +301,7 @@ class GeneratePharsCommand extends Command
             'name'    => $basename,
             'sha1'    => $sha1,
             'url'     => 'http://rocketeer.autopergamene.eu/versions/'.$basename,
-            'version' => $tag,
+            'version' => $tag === 'develop' ? '3.0.*-dev' : $tag,
         );
 
         $manifest = json_encode($manifest, JSON_PRETTY_PRINT);
