@@ -298,6 +298,10 @@ class GeneratePharsCommand extends Command
      */
     protected function updateManifest($tag, $sha1, $basename)
     {
+        if ($tag === 'develop') {
+            return;
+        }
+
         $manifest = file_get_contents(self::MANIFEST);
         $manifest = json_decode($manifest, true);
 
@@ -305,7 +309,7 @@ class GeneratePharsCommand extends Command
             'name'    => $basename,
             'sha1'    => $sha1,
             'url'     => 'http://rocketeer.autopergamene.eu/versions/'.$basename,
-            'version' => $tag === 'develop' ? '3.0-dev' : $tag,
+            'version' => $tag,
         );
 
         $manifest = json_encode($manifest, JSON_PRETTY_PRINT);
