@@ -97,7 +97,10 @@ class GeneratePharsCommand extends Command
     {
         // Get available tags
         $versions = [];
-        $tags     = (array) $this->executeCommands(['cd '.$this->sources[$this->current], 'git show-ref --tags --heads']);
+        $tags     = (array) $this->executeCommands([
+            'cd '.$this->sources[$this->current],
+            'git show-ref --tags --heads'
+        ]);
         foreach ($tags as $tag) {
             $tag  = explode(' ', $tag);
             $sha1 = $tag[0];
@@ -210,8 +213,9 @@ class GeneratePharsCommand extends Command
      */
     protected function copyLatestArchive($tags)
     {
-        $latest = end($tags);
-        $latest = $this->getPharDestination($latest);
+        $versions = array_keys($tags);
+        $latest   = end($versions);
+        $latest   = $this->getPharDestination($latest);
         if (!file_exists($latest)) {
             return $this->error('Unable to create latest version archive');
         }
@@ -301,7 +305,7 @@ class GeneratePharsCommand extends Command
             'name'    => $basename,
             'sha1'    => $sha1,
             'url'     => 'http://rocketeer.autopergamene.eu/versions/'.$basename,
-            'version' => $tag === 'develop' ? '3.0.*-dev' : $tag,
+            'version' => $tag === 'develop' ? '3.0-dev' : $tag,
         );
 
         $manifest = json_encode($manifest, JSON_PRETTY_PRINT);
