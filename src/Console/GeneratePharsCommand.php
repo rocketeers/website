@@ -58,7 +58,7 @@ class GeneratePharsCommand extends Command
         $this->phars   = realpath(__DIR__.'/../../public/versions');
         $this->sources = array(
             'rocketeer' => realpath(__DIR__.'/../../docs/rocketeer'),
-            'satellite' => realpath(__DIR__.'/../../docs/satellite'),
+            // 'satellite' => realpath(__DIR__.'/../../docs/satellite'),
         );
     }
 
@@ -100,8 +100,7 @@ class GeneratePharsCommand extends Command
         foreach ($tags as $tag) {
             $tag  = explode(' ', $tag);
             $sha1 = $tag[0];
-            $tag  = explode('/', $tag[1]);
-            $tag  = end($tag);
+            $tag  = preg_replace('#refs/(tags|remotes|heads)(/origin)?/(.+)#', '$3', $tag[1]);
 
             $versions[$tag] = $sha1;
         }
