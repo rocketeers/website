@@ -149,7 +149,6 @@ class PharGenerator
     protected function generatePhar($tag, $sha1)
     {
         $handle      = $this->name.'/'.$tag;
-        $source      = $this->source;
         $isBranchTag = in_array($tag, ['master', 'develop']);
         $destination = $this->getPharDestination(str_replace('/', '-', $tag));
         $basename    = basename($destination);
@@ -166,35 +165,43 @@ class PharGenerator
 
         $this->output->writeln("<comment>[$handle] Preparing release</comment>");
         $this->executeCommands(array(
-            'cd '.$source,
+            'cd '.$this->source,
             'git reset --hard',
             'git checkout '.trim($tag, ' *'),
             'git reset --hard',
             'git clean -df',
         ));
 
+        $compilationMethod = $this->getCompilationMethod();
+        if (!$compilationMethod) {
+            $this->output->writeln("[$handle] Can't build PHAR for current version");
+
+            return;
+        }
+
         $this->output->writeln("<comment>[$handle] Updating repository</comment>");
         $commands = $isBranchTag ? [
-            'cd '.$source,
+            'cd '.$this->source,
             'git pull',
+            'rm -rf vendor composer.lock',
             'composer update'
         ] : [
-            'cd '.$source,
+            'cd '.$this->source,
+            'rm -rf vendor composer.lock',
             'composer update'
         ];
         $this->executeCommands($commands);
 
         $this->output->writeln("<comment>[$handle] Compiling</comment>");
-        $compiler = file_exists($source.'/box.json') ? '../../vendor/bin/box build -v' : 'php '.$source.'/bin/compile';
         $this->executeCommands(array(
-            'cd '.$source,
-            $compiler,
+            'cd '.$this->source,
+            $compilationMethod,
         ));
 
         $this->output->writeln("<comment>[$handle] Moving archive</comment>");
         $this->executeCommands(array(
-            'cd '.$source,
-            'mv '.$source.'/bin/'.$this->name.'.phar '.$destination,
+            'cd '.$this->source,
+            'mv '.$this->source.'/bin/'.$this->name.'.phar '.$destination,
         ));
     }
 
@@ -294,5 +301,21 @@ class PharGenerator
 
         $manifest = json_encode($manifest, JSON_PRETTY_PRINT);
         file_put_contents(self::MANIFEST, $manifest);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getCompilationMethod()
+    {
+        if (file_exists($this->source.'/box.json')) {
+            return '../../vendor/bin/box build -v';
+        }
+
+        if (file_exists($this->source.'/bin/compile')) {
+            return 'php '.$this->source.'/bin/compile';
+        }
+
+        return false;
     }
 }
