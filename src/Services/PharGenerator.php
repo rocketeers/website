@@ -126,7 +126,7 @@ class PharGenerator
             $tag  = explode(' ', $tag);
             $sha1 = $tag[0];
             $tag  = preg_replace('#refs/(tags|remotes|heads)(/origin)?/(.+)#', '$3', $tag[1]);
-            if (Str::contains($tag, ['feature/', 'master'])) {
+            if (Str::contains($tag, ['feature/'])) {
                 continue;
             }
 
@@ -285,7 +285,7 @@ class PharGenerator
      */
     protected function updateManifest($tag, $sha1, $basename)
     {
-        if ($tag === 'develop') {
+        if ($tag === 'develop' || $tag === 'master') {
             return;
         }
 
