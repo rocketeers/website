@@ -254,7 +254,7 @@ class PharGenerator
         $name = $this->name;
         $name .= $version ? '-'.$version : null;
 
-        return $this->phars.'/'.$name.'.phar';
+        return $this->destination.'/'.$name.'.phar';
     }
 
     //////////////////////////////////////////////////////////////////////
