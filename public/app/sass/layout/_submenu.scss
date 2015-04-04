@@ -39,6 +39,7 @@
 
 	&.affix {
 		left: 0;
+		width: 100% !important;
 
 		+ section {
 			margin-top: 2rem;
