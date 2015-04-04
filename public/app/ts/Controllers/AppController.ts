@@ -58,13 +58,15 @@ module Rocketeer {
 		 * Highlight codeblocks in the page
 		 */
 		highlight() {
+			var titles = this.$location.path() === '/docs/rocketeer/CHANGELOG' ? 'h2' : 'h1, h2, h3, h4';
+
 			// Bind categories to sidebar
 			this.$scope.subcategories = [];
-			$('main section').find('h1, h2, h3, h4').each((key, header: HTMLElement) => {
+			$('main section').find(titles).each((key, header: HTMLElement) => {
 				this.$scope.subcategories.push({
-					label : header.innerHTML,
+					label: $(header).text().replace(/ \- [0-9-]{10}/, ''),
 					anchor: header.id,
-					size  : header.tagName.toLowerCase(),
+					size: header.tagName.toLowerCase(),
 				});
 			});
 
