@@ -8,26 +8,26 @@ use Symfony\Component\Console\Output\OutputInterface;
 class PharGenerator
 {
     /**
-     * Path to the manifest
+     * Path to the manifest.
      */
     const MANIFEST = 'public/versions/manifest.json';
 
     /**
-     * The path to the repository
+     * The path to the repository.
      *
      * @type string
      */
     protected $source;
 
     /**
-     * The folder where PHARs will go
+     * The folder where PHARs will go.
      *
      * @type string
      */
     protected $destination;
 
     /**
-     * The name of the repository
+     * The name of the repository.
      *
      * @type string
      */
@@ -39,9 +39,9 @@ class PharGenerator
     protected $output;
 
     /**
-     * Whether to force creation of PHARs
+     * Whether to force creation of PHARs.
      *
-     * @type boolean
+     * @type bool
      */
     protected $force = false;
 
@@ -59,7 +59,7 @@ class PharGenerator
     }
 
     /**
-     * Generate the Phars for a repository
+     * Generate the Phars for a repository.
      */
     public function generatePhars()
     {
@@ -67,13 +67,13 @@ class PharGenerator
 
         // Update repository
         $this->output->writeln('<comment>Updating repository</comment>');
-        $this->executeCommands(array(
+        $this->executeCommands([
             'cd '.$this->source,
             'git checkout master',
             'git fetch -pt',
             'git reset --hard',
             'git pull',
-        ));
+        ]);
 
         $this->output->writeln('<comment>Generating archives...</comment>');
         $tags = $this->getAvailableVersions();
@@ -98,7 +98,7 @@ class PharGenerator
     }
 
     /**
-     * @param boolean $force
+     * @param bool $force
      */
     public function setForce($force)
     {
@@ -110,7 +110,7 @@ class PharGenerator
     //////////////////////////////////////////////////////////////////////
 
     /**
-     * Get the available Rocketeer versions
+     * Get the available Rocketeer versions.
      *
      * @return string[]
      */
@@ -120,7 +120,7 @@ class PharGenerator
         $versions = [];
         $tags     = (array) $this->executeCommands([
             'cd '.$this->source,
-            'git show-ref --tags --heads'
+            'git show-ref --tags --heads',
         ]);
         foreach ($tags as $tag) {
             $tag  = explode(' ', $tag);
@@ -141,7 +141,7 @@ class PharGenerator
     //////////////////////////////////////////////////////////////////////
 
     /**
-     * Generate the archive for a version
+     * Generate the archive for a version.
      *
      * @param string $tag
      * @param string $sha1
@@ -149,7 +149,7 @@ class PharGenerator
     protected function generatePhar($tag, $sha1)
     {
         $handle      = $this->name.'/'.$tag;
-        $isBranchTag = in_array($tag, ['master', 'develop']);
+        $isBranchTag = in_array($tag, ['master', 'develop'], true);
         $destination = $this->getPharDestination(str_replace('/', '-', $tag));
         $basename    = basename($destination);
 
@@ -164,13 +164,13 @@ class PharGenerator
         }
 
         $this->output->writeln("<comment>[$handle] Preparing release</comment>");
-        $this->executeCommands(array(
+        $this->executeCommands([
             'cd '.$this->source,
             'git reset --hard',
             'git checkout '.trim($tag, ' *'),
             'git reset --hard',
             'git clean -df',
-        ));
+        ]);
 
         $compilationMethod = $this->getCompilationMethod();
         if (!$compilationMethod) {
@@ -184,33 +184,33 @@ class PharGenerator
             'cd '.$this->source,
             'git pull',
             'rm -rf vendor composer.lock',
-            'composer update'
+            'composer update',
         ] : [
             'cd '.$this->source,
             'rm -rf vendor composer.lock',
-            'composer update'
+            'composer update',
         ];
         $this->executeCommands($commands);
 
         $this->output->writeln("<comment>[$handle] Compiling</comment>");
-        $this->executeCommands(array(
+        $this->executeCommands([
             'cd '.$this->source,
             $compilationMethod,
-        ));
+        ]);
 
         $this->output->writeln("<comment>[$handle] Moving archive</comment>");
-        $this->executeCommands(array(
+        $this->executeCommands([
             'cd '.$this->source,
             'mv '.$this->source.'/bin/'.$this->name.'.phar '.$destination,
-        ));
+        ]);
     }
 
     /**
-     * Copy the latest version as universal phar
+     * Copy the latest version as universal phar.
      *
      * @param array $tags
      *
-     * @return integer
+     * @return int
      */
     protected function copyLatestArchive($tags)
     {
@@ -269,7 +269,7 @@ class PharGenerator
     //////////////////////////////////////////////////////////////////////
 
     /**
-     * Reset the contents of the manifest
+     * Reset the contents of the manifest.
      */
     protected function resetManifest()
     {
@@ -277,7 +277,7 @@ class PharGenerator
     }
 
     /**
-     * Update the Box manifest
+     * Update the Box manifest.
      *
      * @param string $tag
      * @param string $sha1
@@ -292,12 +292,12 @@ class PharGenerator
         $manifest = file_get_contents(self::MANIFEST);
         $manifest = json_decode($manifest, true);
 
-        $manifest[] = array(
+        $manifest[] = [
             'name'    => $basename,
             'sha1'    => $sha1,
             'url'     => 'http://rocketeer.autopergamene.eu/versions/'.$basename,
             'version' => $tag,
-        );
+        ];
 
         $manifest = json_encode($manifest, JSON_PRETTY_PRINT);
         file_put_contents(self::MANIFEST, $manifest);

@@ -2,9 +2,7 @@
 namespace Rocketeer\Website\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
 use Rocketeer\Website\Services\PharGenerator;
-use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputOption;
 
 class GeneratePharsCommand extends Command
@@ -20,35 +18,35 @@ class GeneratePharsCommand extends Command
     protected $description = 'Generate the Rocketeer PHARs';
 
     /**
-     * Where the Rocketeer files are
+     * Where the Rocketeer files are.
      *
      * @type string
      */
     protected $sources;
 
     /**
-     * Where the generated PHARs are
+     * Where the generated PHARs are.
      *
      * @type string
      */
     protected $destination;
 
     /**
-     * Setup the command
+     * Setup the command.
      */
     public function __construct()
     {
         parent::__construct();
 
         $this->destination   = realpath(__DIR__.'/../../public/versions');
-        $this->sources = array(
+        $this->sources       = [
             'rocketeer' => realpath(__DIR__.'/../../docs/rocketeer'),
             // 'satellite' => realpath(__DIR__.'/../../docs/satellite'),
-        );
+        ];
     }
 
     /**
-     * Execute the command
+     * Execute the command.
      */
     public function fire()
     {
@@ -65,8 +63,8 @@ class GeneratePharsCommand extends Command
      */
     public function getOptions()
     {
-        return array(
+        return [
             ['force', 'F', InputOption::VALUE_NONE, 'Force the recompilation of all PHARs'],
-        );
+        ];
     }
 }
