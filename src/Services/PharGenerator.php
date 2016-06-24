@@ -3,8 +3,10 @@
 namespace Rocketeer\Website\Services;
 
 use Illuminate\Support\Str;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 class PharGenerator
 {
@@ -42,7 +44,7 @@ class PharGenerator
     protected $name;
 
     /**
-     * @var OutputInterface
+     * @var SymfonyStyle
      */
     protected $output;
 
@@ -64,7 +66,8 @@ class PharGenerator
         $this->source = $source;
         $this->destination = $destination;
         $this->name = $name;
-        $this->output = new NullOutput();
+
+        $this->setOutput(new NullOutput());
     }
 
     /**
@@ -73,20 +76,20 @@ class PharGenerator
     public function generatePhars()
     {
         if (ini_get('phar.readonly') === '1') {
-            $this->output->writeln('<error>Need to set phar.readonly to true</error>');
+            $this->output->error('Need to set phar.readonly to true');
 
             return;
         }
 
         $this->resetManifest();
 
-        $this->output->writeln('<comment>Generating archives...</comment>');
+        $this->output->title('Generating archives...');
         $tags = $this->getAvailableVersions();
         foreach ($tags as $tag => $sha1) {
             $this->generatePhar($tag, $sha1);
         }
 
-        $this->output->writeln('<comment>Generating current version archive</comment>');
+        $this->output->section('Generating current version archive');
         $this->copyLatestArchive($tags);
     }
 
@@ -99,7 +102,7 @@ class PharGenerator
      */
     public function setOutput(OutputInterface $output)
     {
-        $this->output = $output;
+        $this->output = new SymfonyStyle(new ArrayInput([]), $output);
     }
 
     /**
@@ -155,7 +158,7 @@ class PharGenerator
     protected function generatePhar($tag, $sha1)
     {
         $handle = $this->name.'/'.$tag;
-        $isBranchTag = in_array($tag, ['master', 'develop'], true);
+        $isBranchTag = $this->isBranchTag($tag);
         if (version_compare($tag, '1.0.0', 'lt') && !$isBranchTag) {
             $this->output->writeln("[$handle] No PHAR for this version");
 
@@ -178,7 +181,7 @@ class PharGenerator
         $branch = trim($tag, ' *');
         $this->source = $this->tmp.DIRECTORY_SEPARATOR.$branch;
         if (!is_dir($this->source)) {
-            $this->output->writeln("<comment>[$handle] Preparing release</comment>");
+            $this->output->section("[$handle] Preparing release");
             $this->executeCommands([
                 'cd '.$this->tmp,
                 'git clone -b '.$branch.' git@github.com:rocketeers/rocketeer.git '.$branch,
@@ -192,24 +195,23 @@ class PharGenerator
             return;
         }
 
-        $this->output->writeln("<comment>[$handle] Updating repository</comment>");
-        $commands = $isBranchTag ? [
+        $this->output->section("[$handle] Updating repository");
+        $this->executeCommands($isBranchTag ? [
             'cd '.$this->source,
             'git pull',
             'composer install',
         ] : [
             'cd '.$this->source,
             'composer install',
-        ];
-        $this->executeCommands($commands);
+        ]);
 
-        $this->output->writeln("<comment>[$handle] Compiling</comment>");
+        $this->output->section("[$handle] Compiling");
         $this->executeCommands([
             'cd '.$this->source,
             $compilationMethod,
         ]);
 
-        $this->output->writeln("<comment>[$handle] Moving archive</comment>");
+        $this->output->section("[$handle] Moving archive");
         $this->executeCommands([
             'cd '.$this->source,
             'mv '.$this->source.'/bin/'.$this->name.'.phar '.$destination,
@@ -270,7 +272,7 @@ class PharGenerator
     protected function getPharDestination($version = null)
     {
         $name = $this->name;
-        $name .= $version && $version !== 'master' ? '-'.$version : null;
+        $name .= $version ? '-'.$version : null;
 
         return $this->destination.'/'.$name.'.phar';
     }
@@ -296,7 +298,7 @@ class PharGenerator
      */
     protected function updateManifest($tag, $sha1, $basename)
     {
-        if ($tag === 'develop' || $tag === 'master') {
+        if ($this->isBranchTag($tag)) {
             return;
         }
 
@@ -328,5 +330,19 @@ class PharGenerator
         }
 
         return false;
+    }
+
+    //////////////////////////////////////////////////////////////////////
+    ////////////////////////////// HELPERS ///////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+
+    /**
+     * @param string $tag
+     *
+     * @return bool
+     */
+    protected function isBranchTag(string $tag): bool
+    {
+        return in_array($tag, ['master', 'develop'], true);
     }
 }
