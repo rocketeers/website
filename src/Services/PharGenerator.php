@@ -150,10 +150,15 @@ class PharGenerator
     {
         $handle = $this->name.'/'.$tag;
         $isBranchTag = in_array($tag, ['master', 'develop'], true);
-        $destination = $this->getPharDestination(str_replace('/', '-', $tag));
-        $basename = basename($destination);
+        if (version_compare($tag, '1.0.0', 'lt') && !$isBranchTag) {
+            $this->output->writeln("[$handle] No PHAR for this version");
+
+            return;
+        }
 
         // Update manifest
+        $destination = $this->getPharDestination(str_replace('/', '-', $tag));
+        $basename = basename($destination);
         $this->updateManifest($tag, $sha1, $basename);
 
         // Cancel if already compiled
