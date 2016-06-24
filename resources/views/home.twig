@@ -1,0 +1,7 @@
+{% extends '_layouts/default.twig' %}
+
+{% block content %}
+    {% raw %}
+        <section onload="controller.highlight()" ng-bind-html="contents"></section>
+    {% endraw %}
+{% endblock %}

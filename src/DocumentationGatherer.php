@@ -58,7 +58,7 @@ class DocumentationGatherer
         $name   = $file->getBasename('.md');
         $handle = str_replace('-', ' ', $name);
 
-        $this->documentation[$category]['pages'][$handle] = $this->folder.'/docs/'.$folder.'/'.$name;
+        $this->documentation[$category]['pages'][$handle] = $this->folder.'/'.$folder.'/'.$name;
     }
 
     /**
@@ -66,10 +66,10 @@ class DocumentationGatherer
      */
     protected function addCustomPages()
     {
-        $this->documentation['Introduction']['pages'] = ['Introduction' => $this->folder.'/rocketeer/README'] + $this->documentation['Introduction']['pages'];
+        $this->documentation['Introduction']['pages'] = ['Introduction' => 'rocketeer/README'] + $this->documentation['Introduction']['pages'];
 
         if (isset($this->documentation['Help'])) {
-            $this->documentation['Help']['pages'] = ['Changelog' => $this->folder.'/rocketeer/CHANGELOG'] + $this->documentation['Help']['pages'];
+            $this->documentation['Help']['pages'] = ['Changelog' => 'rocketeer/CHANGELOG'] + $this->documentation['Help']['pages'];
         }
     }
 }

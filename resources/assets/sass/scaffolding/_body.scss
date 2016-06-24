@@ -1,0 +1,12 @@
+body,
+html {
+	@extend %reset-margins;
+	font-size: 16px;
+	font-family: $font-sans;
+	line-height: $line-height;
+}
+
+body {
+	background-color: color('solitude');
+	color: color('oslo');
+}

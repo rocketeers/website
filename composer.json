@@ -1,13 +1,17 @@
 {
-  "name": "rocketeer/site",
+  "name": "rocketeer/website",
   "description": "Website for Rocketeer",
   "require": {
-    "symfony/finder": "~2.6",
-    "twig/twig": "~1.16",
-    "illuminate/container": "~4.2",
-    "phpdocumentor/phpdocumentor": "~2.7",
-    "illuminate/console": "~4.2",
-    "illuminate/support": "~5.0"
+    "illuminate/console": "^5.2",
+    "illuminate/container": "^5.2",
+    "illuminate/support": "^5.2",
+    "phpdocumentor/phpdocumentor": "^2.9",
+    "symfony/finder": "^2.7|^3.1",
+    "twig/twig": "^1.24"
+  },
+  "require-dev": {
+    "kherge/box": "^2.7",
+    "symfony/var-dumper": "^3.1"
   },
   "autoload": {
     "psr-4": {
@@ -21,10 +25,7 @@
     }
   ],
   "config": {
-    "preferred-install": "dist"
-  },
-  "require-dev": {
-    "kherge/box": "~2.5",
-    "symfony/var-dumper": "~2.6"
+    "preferred-install": "dist",
+    "sort-packages": true
   }
 }

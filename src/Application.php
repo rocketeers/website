@@ -22,7 +22,7 @@ class Application extends Container
 
         // Create configuration
         $this['config'] = [
-            'paths.views' => $root.'/public/views',
+            'paths.views' => $root.'/resources/views',
             'paths.cache' => $root.'/cache',
         ];
 
