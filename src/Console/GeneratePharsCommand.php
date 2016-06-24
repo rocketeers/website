@@ -1,4 +1,5 @@
 <?php
+
 namespace Rocketeer\Website\Console;
 
 use Illuminate\Console\Command;
@@ -8,26 +9,26 @@ use Symfony\Component\Console\Input\InputOption;
 class GeneratePharsCommand extends Command
 {
     /**
-     * @type string
+     * @var string
      */
     protected $name = 'phars';
 
     /**
-     * @type string
+     * @var string
      */
     protected $description = 'Generate the Rocketeer PHARs';
 
     /**
      * Where the Rocketeer files are.
      *
-     * @type string
+     * @var string
      */
     protected $sources;
 
     /**
      * Where the generated PHARs are.
      *
-     * @type string
+     * @var string
      */
     protected $destination;
 
@@ -38,8 +39,8 @@ class GeneratePharsCommand extends Command
     {
         parent::__construct();
 
-        $this->destination   = realpath(__DIR__.'/../../public/versions');
-        $this->sources       = [
+        $this->destination = realpath(__DIR__.'/../../public/versions');
+        $this->sources = [
             'rocketeer' => realpath(__DIR__.'/../../docs/rocketeer'),
             // 'satellite' => realpath(__DIR__.'/../../docs/satellite'),
         ];

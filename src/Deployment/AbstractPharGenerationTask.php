@@ -1,4 +1,5 @@
 <?php
+
 namespace Rocketeer\Website\Deployment;
 
 use Rocketeer\Abstracts\AbstractTask;
@@ -8,17 +9,17 @@ abstract class AbstractPharGenerationTask extends AbstractTask
     /**
      * The name of the repository.
      *
-     * @type string
+     * @var string
      */
     protected $repository;
 
     /**
-     * @type string
+     * @var string
      */
     protected $name = 'PharGeneration';
 
     /**
-     * @type string
+     * @var string
      */
     protected $description = 'Generates the PHAR of a repository';
 

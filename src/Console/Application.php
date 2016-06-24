@@ -1,4 +1,5 @@
 <?php
+
 namespace Rocketeer\Website\Console;
 
 use Rocketeer\Website\Application as RocketeerWebsite;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Rocketeer\Website\Services;
 
 use Illuminate\Support\Str;
@@ -15,33 +16,33 @@ class PharGenerator
     /**
      * The path to the repository.
      *
-     * @type string
+     * @var string
      */
     protected $source;
 
     /**
      * The folder where PHARs will go.
      *
-     * @type string
+     * @var string
      */
     protected $destination;
 
     /**
      * The name of the repository.
      *
-     * @type string
+     * @var string
      */
     protected $name;
 
     /**
-     * @type OutputInterface
+     * @var OutputInterface
      */
     protected $output;
 
     /**
      * Whether to force creation of PHARs.
      *
-     * @type bool
+     * @var bool
      */
     protected $force = false;
 
@@ -52,10 +53,10 @@ class PharGenerator
      */
     public function __construct($name, $source, $destination)
     {
-        $this->source      = $source;
+        $this->source = $source;
         $this->destination = $destination;
-        $this->name        = $name;
-        $this->output      = new NullOutput();
+        $this->name = $name;
+        $this->output = new NullOutput();
     }
 
     /**
@@ -118,14 +119,14 @@ class PharGenerator
     {
         // Get available tags
         $versions = [];
-        $tags     = (array) $this->executeCommands([
+        $tags = (array) $this->executeCommands([
             'cd '.$this->source,
             'git show-ref --tags --heads',
         ]);
         foreach ($tags as $tag) {
-            $tag  = explode(' ', $tag);
+            $tag = explode(' ', $tag);
             $sha1 = $tag[0];
-            $tag  = preg_replace('#refs/(tags|remotes|heads)(/origin)?/(.+)#', '$3', $tag[1]);
+            $tag = preg_replace('#refs/(tags|remotes|heads)(/origin)?/(.+)#', '$3', $tag[1]);
             if (Str::contains($tag, ['feature/'])) {
                 continue;
             }
@@ -148,10 +149,10 @@ class PharGenerator
      */
     protected function generatePhar($tag, $sha1)
     {
-        $handle      = $this->name.'/'.$tag;
+        $handle = $this->name.'/'.$tag;
         $isBranchTag = in_array($tag, ['master', 'develop'], true);
         $destination = $this->getPharDestination(str_replace('/', '-', $tag));
-        $basename    = basename($destination);
+        $basename = basename($destination);
 
         // Update manifest
         $this->updateManifest($tag, $sha1, $basename);
@@ -215,8 +216,8 @@ class PharGenerator
     protected function copyLatestArchive($tags)
     {
         $versions = array_keys($tags);
-        $latest   = end($versions);
-        $latest   = $this->getPharDestination($latest);
+        $latest = end($versions);
+        $latest = $this->getPharDestination($latest);
         if (!file_exists($latest)) {
             return $this->output->writeln('<error>Unable to create latest version archive</error>');
         }
@@ -293,9 +294,9 @@ class PharGenerator
         $manifest = json_decode($manifest, true);
 
         $manifest[] = [
-            'name'    => $basename,
-            'sha1'    => $sha1,
-            'url'     => 'http://rocketeer.autopergamene.eu/versions/'.$basename,
+            'name' => $basename,
+            'sha1' => $sha1,
+            'url' => 'http://rocketeer.autopergamene.eu/versions/'.$basename,
             'version' => $tag,
         ];
 

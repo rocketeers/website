@@ -1,4 +1,5 @@
 <?php
+
 namespace Rocketeer\Website\Deployment;
 
 class SatellitePhar extends AbstractPharGenerationTask
@@ -6,7 +7,7 @@ class SatellitePhar extends AbstractPharGenerationTask
     /**
      * The name of the repository.
      *
-     * @type string
+     * @var string
      */
     protected $repository = 'satellite';
 }

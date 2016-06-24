@@ -1,4 +1,5 @@
 <?php
+
 namespace Rocketeer\Website;
 
 use Illuminate\Container\Container;
@@ -48,10 +49,10 @@ class Application extends Container
     {
         $this->singleton('view', function ($app) {
             $loader = new Twig_Loader_Filesystem($app['config']['paths.views']);
-            $twig   = new Twig_Environment($loader, [
-                'cache'       => $app['config']['paths.cache'],
+            $twig = new Twig_Environment($loader, [
+                'cache' => $app['config']['paths.cache'],
                 'auto_reload' => true,
-                'debug'       => true,
+                'debug' => true,
             ]);
 
             return $twig;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Rocketeer\Website;
 
 use Symfony\Component\Finder\Finder;
@@ -7,14 +8,14 @@ use Symfony\Component\Finder\SplFileInfo;
 class DocumentationGatherer
 {
     /**
-     * @type array
+     * @var array
      */
     protected $documentation = [];
 
     /**
      * The folder where documentation resides.
      *
-     * @type string
+     * @var string
      */
     protected $folder = 'docs';
 
@@ -42,8 +43,8 @@ class DocumentationGatherer
      */
     protected function addPage(SplFileInfo $file)
     {
-        $folder   = $file->getPath();
-        $folder   = basename($folder);
+        $folder = $file->getPath();
+        $folder = basename($folder);
         $category = preg_replace('/[IV]+-(.+)/', '$1', $folder);
 
         // Create documentation entry the first time
@@ -55,7 +56,7 @@ class DocumentationGatherer
         }
 
         // Build handle and label
-        $name   = $file->getBasename('.md');
+        $name = $file->getBasename('.md');
         $handle = str_replace('-', ' ', $name);
 
         $this->documentation[$category]['pages'][$handle] = $this->folder.'/'.$folder.'/'.$name;
