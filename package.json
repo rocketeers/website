@@ -17,5 +17,9 @@
     "madewithlove-webpack-config": "^4.1.0",
     "markdown-loader": "^0.1.7",
     "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "build": "webpack --progres --bail",
+    "build:production": "NODE_ENV=production npm run build"
   }
 }
