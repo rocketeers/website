@@ -72,6 +72,12 @@ class PharGenerator
      */
     public function generatePhars()
     {
+        if (ini_get('phar.readonly') === '1') {
+            $this->output->writeln('<error>Need to set phar.readonly to true</error>');
+
+            return;
+        }
+
         $this->resetManifest();
 
         $this->output->writeln('<comment>Generating archives...</comment>');
