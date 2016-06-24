@@ -15,6 +15,9 @@ npm run build:gitbook
 cp -r _book/* public
 cp public/favicon.png public/gitbook/images/favicon.ico
 
+# Create API docs
+npm run build:api
+
 # Cleanup docs folder
 cd docs/docs
 git reset --hard

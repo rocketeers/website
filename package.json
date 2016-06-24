@@ -23,6 +23,7 @@
   "scripts": {
     "build:assets": "webpack --progress --bail",
     "build:gitbook": "gitbook build",
+    "build:api": "vendor/bin/phpdoc -t public/api -d docs/rocketeer/src",
     "build": "bash build.sh"
   }
 }
