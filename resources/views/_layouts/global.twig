@@ -6,10 +6,10 @@
 
 	<!-- Chrome Frame and Favicon -->
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<link href='app/img/favicon.png' rel='shortcut icon' />
+	<link href='/favicon.png' rel='shortcut icon' />
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="builds/main.css">
+	<link rel="stylesheet" href="{{ assets.main.css }}">
 
 	<!-- Responsive tags -->
 	<meta name='apple-mobile-web-app-capable' content='yes' />
@@ -21,7 +21,8 @@
   {% block layout %}
   {% endblock %}
 
-	<script src="builds/main.js"></script>
+
+	<script src="{{ assets.main.js }}"></script>
 
 	<!-- Documentation tree -->
 	{% if docs %}
