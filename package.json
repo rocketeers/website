@@ -1,23 +1,16 @@
 {
   "name": "rocketeer",
   "dependencies": {
-    "angular": "^1.5.7",
-    "angular-sanitize": "^1.5.7",
-    "angular-scroll": "^1.0.0",
-    "angular-strap": "^2.3.9",
     "bootstrap-sass": "^3.3.6",
     "breakpoint-sass": "^2.7.0",
     "gitbook-cli": "^2.3.0",
-    "jquery": "^3.0.0",
     "prismjs": "^1.5.1",
-    "slug": "^0.9.1",
     "susy": "^2.2.12"
   },
   "devDependencies": {
     "eslint": "^2.13.1",
     "eslint-config-madewithlove": "^3.3.1",
     "madewithlove-webpack-config": "^4.1.0",
-    "markdown-loader": "^0.1.7",
     "webpack": "^1.13.1"
   },
   "scripts": {
