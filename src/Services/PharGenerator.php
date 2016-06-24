@@ -264,7 +264,7 @@ class PharGenerator
     protected function getPharDestination($version = null)
     {
         $name = $this->name;
-        $name .= $version ? '-'.$version : null;
+        $name .= $version && $version !== 'master' ? '-'.$version : null;
 
         return $this->destination.'/'.$name.'.phar';
     }
