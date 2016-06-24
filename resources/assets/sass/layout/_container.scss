@@ -1,52 +1,72 @@
-// Container
-//
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+.book {
+    display: flex;
+    height: auto;
+    min-height: 100%;
 
-.layout-container {
-	@include container;
-	display: table;
-	width: 100%;
+    .book-body,
+    .book-summary ul.summary,
+    .book-body, .book-body .body-inner,
+    .book-body .page-wrapper .page-inner {
+        max-width: none;
+        overflow: visible;
+    }
 }
 
 $inner-padding: 2rem;
 
+.page-inner {
+    background-color: color('solitude');
+
+    #book-search-results {
+        padding: 2rem 10%;
+    }
+
+    .markdown-section {
+        h1:first-of-type {
+            @extend %reset-margins;
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 2rem;
+            margin-left: -($inner-padding * 2);
+            padding: 0.5rem 2rem 0.75rem;
+            text-transform: uppercase;
+            text-align: center;
+            color: $color-accent;
+            font-size: 5rem;
+            font-weight: 100;
+        }
+
+        color: color('oslo');
+
+        @import '../scaffolding/typography';
+    }
+
+    #book-search-results .search-results .has-results .search-results-item a {
+        color: $color-accent;
+    }
+}
+
+
 .layout-content {
-	display: table-cell;
-	padding: 2rem 0 1rem;
-	padding-top: 0;
-	max-width: 100%;
+    display: table-cell;
+    max-width: 100%;
 
-	section {
-		@extend %reset-margins;
-		padding: 2rem 10%;
+    section {
+        @extend %reset-margins;
+        padding: 2rem 10%;
+    }
 
-		h1:first-of-type {
-			@extend %reset-margins;
-			box-sizing: border-box;
-			width: 100%;
-			margin-bottom: 2rem;
-			margin-left: -($inner-padding * 2);
-			padding: 0.5rem 2rem 0.75rem;
-			text-transform: uppercase;
-			text-align: center;
-			color: $color-accent;
-			font-size: 5rem;
-			font-weight: 100;
-		}
-	}
+    @include breakpoint(max-width $tablet) {
+        section {
+            padding: 1rem;
+            padding-top: 0;
 
-	@include breakpoint(max-width $tablet) {
-		section {
-			padding: 1rem;
-			padding-top: 0;
-
-			h1:first-child {
-				margin-bottom: 1rem;
-				margin-left: -1rem;
-				padding: 0.5rem 1rem;
-				font-size: 3rem;
-			}
-		}
-	}
+            h1:first-child {
+                margin-bottom: 1rem;
+                margin-left: -1rem;
+                padding: 0.5rem 1rem;
+                font-size: 3rem;
+            }
+        }
+    }
 }

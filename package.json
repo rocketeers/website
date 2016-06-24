@@ -7,6 +7,7 @@
     "angular-strap": "^2.3.9",
     "bootstrap-sass": "^3.3.6",
     "breakpoint-sass": "^2.7.0",
+    "gitbook-cli": "^2.3.0",
     "jquery": "^3.0.0",
     "prismjs": "^1.5.1",
     "slug": "^0.9.1",
@@ -20,7 +21,8 @@
     "webpack": "^1.13.1"
   },
   "scripts": {
-    "build": "webpack --progres --bail",
-    "build:production": "NODE_ENV=production npm run build"
+    "build:assets": "webpack --progress --bail",
+    "build:gitbook": "gitbook build",
+    "build": "bash build.sh"
   }
 }

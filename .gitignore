@@ -1,11 +1,6 @@
 # Cache and compiled
-*.map
-.rocketeer/logs
-.sass-cache
-.tmp
+_book
 api
-public/app/templates
-public/builds
 
 # Dependencies
 node_modules

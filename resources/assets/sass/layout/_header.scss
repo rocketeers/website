@@ -9,20 +9,21 @@
 	background: #050409 url('../img/header.jpg') fixed no-repeat;
 	background-size: cover;
 	background-position: center center;
-	padding: 11rem 0;
+	padding: 20rem 0;
 	text-align: center;
 	transition: padding 0.3s;
 
 	h1 {
 		@extend %reset-margins;
 		color: white;
-		font-size: 5rem;
+		font-size: 8rem;
 		font-weight: 300;
 		line-height: $line-height;
 		text-shadow: 0 0.05em 0 rgba(black, 0.25);
 		font-family: 'continuo', $font-sans;
 
 		small {
+            font-size: 5rem;
 			font-family: $font-sans;
 			font-weight: 100;
 			color: lighten(black, 90);
@@ -52,7 +53,7 @@
 
 .layout-buttons {
 	@extend %reset-margins;
-	background-color: white;
+    background: darken($color-base, 5);
 	margin: 0 auto;
 	padding: 1rem 0;
 	text-align: center;

@@ -1,12 +1,19 @@
+* {
+    -webkit-font-smoothing: auto;
+}
+
 body,
 html {
 	@extend %reset-margins;
-	font-size: 16px;
 	font-family: $font-sans;
 	line-height: $line-height;
+    background-color: color('cello');
 }
 
 body {
-	background-color: color('solitude');
-	color: color('oslo');
+	color: $color-text;
+}
+
+.book.font-family-1 {
+    font-family: $font-sans;
 }

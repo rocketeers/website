@@ -3,73 +3,51 @@
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-.layout-sidebar {
-	width: 20em;
-	display: table-cell;
-	vertical-align: top;
-	text-align: right;
+.book-summary {
+    position: relative;
+    background-color: color('cello');
+    font-size: 1.1em;
+    overflow: visible;
 
-	padding: 0 0 2rem;
+    #book-search-input {
+        background-color: darken(color('cello'), 10);
+        color: white;
+    }
 
-	background-color: color('cello');
+    ul.summary {
+        ul, li ul {
+            padding: 0;
+        }
 
-	@include breakpoint(max-width $desktop) {
-		display: none;
-	}
+        li {
+            text-align: right;
+            font-family: $font-sans;
 
-	// Links
-	////////////////////////////////////////////////////////////////////
+            span, a {
+                color: white;
+                padding: 0.25em 0.75em;
+                font-weight: 400;
+            }
 
-	a {
-		cursor: pointer;
-		color: white;
-		font-weight: 400;
+            span {
+                font-size: 1.5em;
+                margin: 0.75em 0 0.25em;
+                color: white;
+                padding: 0 1rem 0.5rem 0;
+                border-bottom: 1px solid rgba(white, 0.1);
+            }
 
-		&:hover {
-			text-decoration: none;
-		}
-	}
+            &.active a,
+            a:hover {
+                $active: darken(color('cello'), 10);
+                background-color: $active;
+                color: white;
+                text-decoration: none;
+            }
 
-	// List
-	////////////////////////////////////////////////////////////////////
-
-	ul {
-		list-style-type: none;
-		margin: 0;
-	}
-
-	li {
-		margin: 0;
-		padding: 0.15em 1em;
-		font-size: 1rem;
-
-		&.active,
-		&:hover {
-			$active: darken(color('cello'), 10);
-			background-color: $active;
-
-			ul {
-				margin: 0.5em 0.25em;
-
-				li {
-					border-right: 3px solid white;
-
-					&:hover {
-						border-right: 3px solid darken($color-base, 5);
-					}
-				}
-			}
-		}
-	}
-
-	// Titles
-	////////////////////////////////////////////////////////////////////
-
-	h2 {
-		font-size: 1.25rem;
-		margin: 0.75em 0 0.25em;
-		color: white;
-		padding: 0 1rem 0.5rem 0;
-		border-bottom: 1px solid rgba(white, 0.1);
-	}
+            a {
+                color: white;
+            }
+        }
+    }
 }
