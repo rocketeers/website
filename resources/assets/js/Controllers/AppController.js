@@ -1,4 +1,5 @@
 import Prism from 'prismjs';
+import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-php';
 import 'prismjs/components/prism-php-extras';
