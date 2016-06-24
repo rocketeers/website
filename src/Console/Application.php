@@ -2,9 +2,7 @@
 
 namespace Rocketeer\Website\Console;
 
-use Rocketeer\Website\Application as RocketeerWebsite;
-
-class Application extends \Illuminate\Console\Application
+class Application extends \Symfony\Component\Console\Application
 {
     /**
      * Setup the application.
@@ -13,11 +11,8 @@ class Application extends \Illuminate\Console\Application
     {
         parent::__construct('Rocketeer website');
 
-        // Register services
-        $this->laravel = new RocketeerWebsite();
-
-        $this->resolveCommands([
-            'Rocketeer\Website\Console\GeneratePharsCommand',
+        $this->addCommands([
+            new GeneratePharsCommand(),
         ]);
     }
 }

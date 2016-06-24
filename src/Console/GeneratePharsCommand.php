@@ -2,22 +2,14 @@
 
 namespace Rocketeer\Website\Console;
 
-use Illuminate\Console\Command;
 use Rocketeer\Website\Services\PharGenerator;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class GeneratePharsCommand extends Command
 {
-    /**
-     * @var string
-     */
-    protected $name = 'phars';
-
-    /**
-     * @var string
-     */
-    protected $description = 'Generate the Rocketeer PHARs';
-
     /**
      * Where the Rocketeer files are.
      *
@@ -47,25 +39,25 @@ class GeneratePharsCommand extends Command
     }
 
     /**
-     * Execute the command.
+     * {@inheritdoc}
      */
-    public function fire()
+    protected function configure()
     {
-        foreach ($this->sources as $name => $source) {
-            $generator = new PharGenerator($name, $source, $this->destination);
-            $generator->setOutput($this->output);
-            $generator->setForce($this->option('force'));
-            $generator->generatePhars();
-        }
+        $this->setName('phars')
+             ->setDescription('Generate the Rocketeer PHARs')
+             ->addOption('force', 'F', InputOption::VALUE_NONE, 'Force the recompilation of all PHARs');
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
-    public function getOptions()
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
-        return [
-            ['force', 'F', InputOption::VALUE_NONE, 'Force the recompilation of all PHARs'],
-        ];
+        foreach ($this->sources as $name => $source) {
+            $generator = new PharGenerator($name, $source, $this->destination);
+            $generator->setOutput($output);
+            $generator->setForce($input->getOption('force'));
+            $generator->generatePhars();
+        }
     }
 }
