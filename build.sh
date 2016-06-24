@@ -16,6 +16,7 @@ cp -r _book/* public
 cp public/favicon.png public/gitbook/images/favicon.ico
 
 # Create API docs
+rm -rf public/api
 npm run build:api
 
 # Cleanup docs folder

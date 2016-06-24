@@ -23,7 +23,7 @@
   "scripts": {
     "build:assets": "webpack --progress --bail",
     "build:gitbook": "gitbook build",
-    "build:api": "vendor/bin/phpdoc -t public/api -d docs/rocketeer/src",
+    "build:api": "vendor/bin/apigen generate -s docs/rocketeer/src -d public/api --debug --template-theme=bootstrap --title='Rocketeer API'",
     "build": "bash build.sh"
   }
 }

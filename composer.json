@@ -4,7 +4,7 @@
   "require": {
     "illuminate/container": "^5.2",
     "illuminate/support": "^5.2",
-    "phpdocumentor/phpdocumentor": "^2.9",
+    "apigen/apigen": "4.2.x@dev",
     "symfony/console": "^2.7|^3.1",
     "symfony/finder": "^2.7|^3.1",
     "twig/twig": "^1.24"
