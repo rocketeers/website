@@ -9,6 +9,7 @@
     "breakpoint-sass": "^2.7.0",
     "jquery": "^3.0.0",
     "prismjs": "^1.5.1",
+    "slug": "^0.9.1",
     "susy": "^2.2.12"
   },
   "devDependencies": {
