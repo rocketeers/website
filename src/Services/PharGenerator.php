@@ -14,6 +14,13 @@ class PharGenerator
     const MANIFEST = 'public/versions/manifest.json';
 
     /**
+     * The folder in which to prepare the archives.
+     *
+     * @var string
+     */
+    protected $tmp;
+
+    /**
      * The path to the repository.
      *
      * @var string
@@ -53,6 +60,7 @@ class PharGenerator
      */
     public function __construct($name, $source, $destination)
     {
+        $this->tmp = realpath(__DIR__.'/../../public/tmp');
         $this->source = $source;
         $this->destination = $destination;
         $this->name = $name;
@@ -65,16 +73,6 @@ class PharGenerator
     public function generatePhars()
     {
         $this->resetManifest();
-
-        // Update repository
-        $this->output->writeln('<comment>Updating repository</comment>');
-        $this->executeCommands([
-            'cd '.$this->source,
-            'git checkout master',
-            'git fetch -pt',
-            'git reset --hard',
-            'git pull',
-        ]);
 
         $this->output->writeln('<comment>Generating archives...</comment>');
         $tags = $this->getAvailableVersions();
@@ -123,6 +121,7 @@ class PharGenerator
             'cd '.$this->source,
             'git show-ref --tags --heads',
         ]);
+
         foreach ($tags as $tag) {
             $tag = explode(' ', $tag);
             $sha1 = $tag[0];
@@ -164,14 +163,16 @@ class PharGenerator
             return;
         }
 
-        $this->output->writeln("<comment>[$handle] Preparing release</comment>");
-        $this->executeCommands([
-            'cd '.$this->source,
-            'git reset --hard',
-            'git checkout '.trim($tag, ' *'),
-            'git reset --hard',
-            'git clean -df',
-        ]);
+        // Create folder if necessary
+        $branch = trim($tag, ' *');
+        $this->source = $this->tmp.DIRECTORY_SEPARATOR.$branch;
+        if (!is_dir($this->source)) {
+            $this->output->writeln("<comment>[$handle] Preparing release</comment>");
+            $this->executeCommands([
+                'cd '.$this->tmp,
+                'git clone -b '.$branch.' git@github.com:rocketeers/rocketeer.git '.$branch,
+            ]);
+        }
 
         $compilationMethod = $this->getCompilationMethod();
         if (!$compilationMethod) {
@@ -184,12 +185,10 @@ class PharGenerator
         $commands = $isBranchTag ? [
             'cd '.$this->source,
             'git pull',
-            'rm -rf vendor composer.lock',
-            'composer update',
+            'composer install',
         ] : [
             'cd '.$this->source,
-            'rm -rf vendor composer.lock',
-            'composer update',
+            'composer install',
         ];
         $this->executeCommands($commands);
 
@@ -310,7 +309,7 @@ class PharGenerator
     protected function getCompilationMethod()
     {
         if (file_exists($this->source.'/box.json')) {
-            return '../../vendor/bin/box build -v';
+            return '../../../vendor/bin/box build -v';
         }
 
         if (file_exists($this->source.'/bin/compile')) {
