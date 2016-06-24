@@ -4,7 +4,7 @@ use PhpCsFixer\Finder;
 
 require 'vendor/autoload.php';
 
-$finder = Finder::create()->in(['src']);
+$finder = Finder::create()->in(['src', 'public']);
 
 return Config::create()
              ->setRiskyAllowed(true)
