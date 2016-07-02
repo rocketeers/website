@@ -2,7 +2,6 @@
 
 namespace Rocketeer\Website\Services;
 
-use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -135,7 +134,7 @@ class PharGenerator
             $tag = explode(' ', $tag);
             $sha1 = $tag[0];
             $tag = preg_replace('#refs/(tags|remotes|heads)(/origin)?/(.+)#', '$3', $tag[1]);
-            if (Str::contains($tag, ['feature/'])) {
+            if (strpos($tag, 'feature/') !== false) {
                 continue;
             }
 

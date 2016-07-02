@@ -1,13 +1,10 @@
 {
   "name": "rocketeer/website",
   "description": "Website for Rocketeer",
+  "license": "MIT",
   "require": {
-    "illuminate/container": "^5.2",
-    "illuminate/support": "^5.2",
     "apigen/apigen": "4.2.x@dev",
-    "symfony/console": "^2.7|^3.1",
-    "symfony/finder": "^2.7|^3.1",
-    "twig/twig": "^1.24"
+    "symfony/console": "^2.7|^3.1"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "2.0.x@dev",

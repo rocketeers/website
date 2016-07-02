@@ -6,3 +6,15 @@ Pages are open bar to be edited by anyone [in their repository](https://github.c
 The website just pulls the docs and concatenate the .md into an .html, with a bit of styling on top.
 
 Have fun kids.
+
+## Building the application
+
+```shell
+$ npm run build
+```
+
+## Compiling the phars
+
+```shell
+$ php app.php phars
+```
