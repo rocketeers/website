@@ -7,7 +7,6 @@
     "symfony/console": "^2.7|^3.1"
   },
   "require-dev": {
-    "apigen/theme-bootstrap": "^1.1",
     "friendsofphp/php-cs-fixer": "2.0.x@dev",
     "kherge/box": "^2.7",
     "symfony/var-dumper": "^3.1"
