@@ -17,7 +17,7 @@
     "build:assets": "webpack --progress --bail",
     "prebuild:gitbook": "gitbook install",
     "build:gitbook": "gitbook build",
-    "build:api": "vendor/bin/apigen generate -s docs/rocketeer/src -d public/api --debug --template-theme=bootstrap --title='Rocketeer API'",
+    "build:api": "vendor/bin/apigen generate -s docs/rocketeer/src -d public/api --template-theme='bootstrap' --title='Rocketeer API'",
     "build": "bash build.sh"
   }
 }
