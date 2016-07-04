@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ed6d3340b172c0df1049f8b8e3fcb95e",
-    "content-hash": "0518d3bbabfc002426d14e47dc62bd3e",
+    "hash": "84040c6da86c8981e79b3c9a86f852b3",
+    "content-hash": "d14f11115328b0138a46edc8ccb88964",
     "packages": [
         {
             "name": "andrewsville/php-token-reflection",
@@ -1607,12 +1607,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "e50d3896d4819f7f65400860e2f3a23344df9740"
+                "reference": "e4fa04439e9fe5737b8d3c9047dfe728572dc5b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/e50d3896d4819f7f65400860e2f3a23344df9740",
-                "reference": "e50d3896d4819f7f65400860e2f3a23344df9740",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/e4fa04439e9fe5737b8d3c9047dfe728572dc5b2",
+                "reference": "e4fa04439e9fe5737b8d3c9047dfe728572dc5b2",
                 "shasum": ""
             },
             "require": {
@@ -1663,7 +1663,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-07-02 11:40:59"
+            "time": "2016-07-03 21:39:54"
         },
         {
             "name": "herrera-io/annotations",
