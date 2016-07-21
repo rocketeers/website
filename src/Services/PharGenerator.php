@@ -127,6 +127,8 @@ class PharGenerator
         $versions = [];
         $tags = (array) $this->executeCommands([
             'cd '.$this->source,
+            'git checkout master',
+            'git pull',
             'git show-ref --tags --heads',
         ]);
 
