@@ -12,7 +12,7 @@ class PharGenerator
     /**
      * Path to the manifest.
      */
-    const MANIFEST = 'public/versions/manifest.json';
+    const MANIFEST = 'manifest.json';
 
     /**
      * The folder in which to prepare the archives.
@@ -123,12 +123,19 @@ class PharGenerator
      */
     protected function getAvailableVersions()
     {
+        // Update repository
+        $this->executeCommands([
+            'cd '.$this->source,
+            'git checkout develop',
+            'git checkout master',
+            'git fetch -pt',
+            'git pull',
+        ]);
+
         // Get available tags
         $versions = [];
         $tags = (array) $this->executeCommands([
             'cd '.$this->source,
-            'git checkout master',
-            'git pull',
             'git show-ref --tags --heads',
         ]);
 
@@ -287,7 +294,7 @@ class PharGenerator
      */
     protected function resetManifest()
     {
-        file_put_contents(self::MANIFEST, '[]');
+        file_put_contents($this->destination.'/'.self::MANIFEST, '[]');
     }
 
     /**
@@ -303,7 +310,7 @@ class PharGenerator
             return;
         }
 
-        $manifest = file_get_contents(self::MANIFEST);
+        $manifest = file_get_contents($this->destination.'/'.self::MANIFEST);
         $manifest = json_decode($manifest, true);
 
         $manifest[] = [
@@ -314,7 +321,7 @@ class PharGenerator
         ];
 
         $manifest = json_encode($manifest, JSON_PRETTY_PRINT);
-        file_put_contents(self::MANIFEST, $manifest);
+        file_put_contents($this->destination.'/'.self::MANIFEST, $manifest);
     }
 
     /**
