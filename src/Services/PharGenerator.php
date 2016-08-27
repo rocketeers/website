@@ -207,10 +207,10 @@ class PharGenerator
         $this->executeCommands($isBranchTag ? [
             'cd '.$this->source,
             'git pull',
-            'composer install',
+            'composer update',
         ] : [
             'cd '.$this->source,
-            'composer install',
+            'composer update',
         ]);
 
         $this->output->section("[$handle] Compiling");
